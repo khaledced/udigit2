@@ -109,7 +109,7 @@ const Navbar = () => {
               href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20suis%20intéressé%20par%20vos%20services%20digitaux."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-udigit-blue text-white px-8 py-4 font-bold border-2 border-transparent hover:bg-transparent hover:text-udigit-blue hover:border-udigit-blue transition-all duration-300"
+              className="bg-udigit-blue text-white px-8 py-4 font-bold rounded-2xl border-2 border-transparent hover:bg-transparent hover:text-udigit-blue hover:border-udigit-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Contact
             </a>
@@ -180,7 +180,7 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="bg-udigit-blue text-white px-8 py-4 font-bold border-2 border-transparent hover:bg-transparent hover:text-udigit-blue hover:border-udigit-blue transition-all duration-300 w-full text-center block"
+                    className="w-full bg-udigit-blue text-white py-4 px-6 font-bold rounded-2xl text-center block hover:bg-udigit-blue/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     Contact
                   </a>

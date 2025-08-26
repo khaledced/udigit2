@@ -90,15 +90,19 @@ const Home = () => {
            }}></div>
          </div>
 
-         {/* Mouse Follow Effect */}
-         <motion.div
-           className="fixed w-64 h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-30"
-           animate={{
-             x: mousePosition.x - 128,
-             y: mousePosition.y - 128,
-           }}
-           transition={{ type: "spring", stiffness: 50, damping: 20 }}
-         />
+                   {/* Mouse Follow Effect */}
+          <motion.div
+            className="fixed w-64 h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-20"
+            animate={{
+              x: mousePosition.x - 128,
+              y: mousePosition.y - 128,
+            }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+            style={{
+              filter: 'blur(20px)',
+              transform: 'translate(-50%, -50%)'
+            }}
+          />
 
          <div className="container-custom section-padding relative z-20">
            <div className="text-center max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto">
@@ -336,7 +340,7 @@ const Home = () => {
                 href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-udigit-blue text-white text-2xl px-16 py-8 font-bold border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300"
+                className="inline-block bg-udigit-blue text-white text-xl sm:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-8 font-bold rounded-2xl border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Démarrer votre projet
               </a>
