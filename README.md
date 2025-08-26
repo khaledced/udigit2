@@ -124,8 +124,8 @@ colors: {
 ## 📞 Contact
 
 Pour toute question ou modification :
-- Email : contact@udigit.fr
-- Téléphone : +33 1 23 45 67 89
+- Email : udigit.services@gmail.com
+- Téléphone : +226 71 78 47 21
 
 ## 📄 Licence
 
