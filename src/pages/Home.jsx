@@ -30,22 +30,25 @@ const Home = () => {
       title: "Marketing Digital & Gestion de réseaux sociaux",
       description: "Créons des expériences digitales qui marquent les esprits et convertissent vos visiteurs.",
       icon: "📱",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#F18440"
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      color: "#F18440",
+      features: ["Gestion réseaux sociaux", "Création de contenu vidéo", "Stratégie marketing", "Analyse de performance"]
     },
     {
       title: "Développement Web & maintenance informatique",
       description: "Sites web performants et applications modernes avec les dernières technologies.",
       icon: "💻",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#2A4B9B"
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      color: "#2A4B9B",
+      features: ["Sites web modernes", "Applications web", "Maintenance système", "Support technique"]
     },
     {
-      title: "Branding,support de communication & impression",
+      title: "Branding & Communication visuelle",
       description: "Donnez vie à votre marque avec une identité visuelle cohérente et mémorable.",
       icon: "🎨",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#F18440"
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      color: "#F18440",
+      features: ["Identité de marque", "Supports de communication", "Impression", "Design graphique"]
     }
   ]
 
@@ -192,92 +195,149 @@ const Home = () => {
          </motion.div>
        </section>
 
-             {/* Services Section - Modern Design */}
-       <section className="section-padding bg-white relative overflow-hidden">
-         <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-           viewport={{ once: true }}
-           className="text-center mb-24"
-         >
-           <h2 className="text-6xl md:text-8xl font-black text-black mb-8">
-             <span className="text-udigit-orange">Nos</span> Services
-           </h2>
-           <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-light">
-             Nous combinons créativité et stratégie pour créer des solutions digitales 
-             qui génèrent des résultats concrets.
-           </p>
-         </motion.div>
+                     {/* Services Section - Futuristic Design */}
+        <section className="section-padding bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-20 left-20 w-96 h-96 bg-udigit-orange rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-udigit-blue rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-udigit-orange to-udigit-blue rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          </div>
 
-         <div className="grid md:grid-cols-3 gap-12">
-           {services.map((service, index) => (
-             <motion.div
-               key={service.title}
-               initial={{ opacity: 0, y: 100 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 1, delay: index * 0.2 }}
-               viewport={{ once: true }}
-               whileHover={{ 
-                 y: -10,
-                 transition: { duration: 0.3 }
-               }}
-               className="group relative"
-             >
-               <div className="bg-white border-2 border-gray-100 p-12 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                 {/* Color Accent */}
-                 <div 
-                   className="absolute top-0 left-0 w-full h-1"
-                   style={{ backgroundColor: service.color }}
-                 ></div>
-                 
-                 {/* Background Pattern */}
-                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
-                   <div className="w-full h-full" style={{
-                     backgroundImage: `linear-gradient(45deg, ${service.color} 25%, transparent 25%), linear-gradient(-45deg, ${service.color} 25%, transparent 25%), linear-gradient(45deg, transparent 75%, ${service.color} 75%), linear-gradient(-45deg, transparent 75%, ${service.color} 75%)`,
-                     backgroundSize: '20px 20px',
-                     backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-                   }}></div>
-                 </div>
-                 
-                 <div className="relative z-10">
-                   <motion.div 
-                     className="text-8xl mb-8 flex justify-center items-center"
-                     whileHover={{ scale: 1.1 }}
-                     transition={{ duration: 0.3 }}
-                   >
-                     <span className="block">{service.icon}</span>
-                   </motion.div>
-                   
-                   <h3 className="text-3xl font-bold text-black mb-6">
-                     {service.title}
-                   </h3>
-                   
-                   <p className="text-gray-600 leading-relaxed text-lg mb-8">
-                     {service.description}
-                   </p>
-                   
-                   <div 
-                     className="w-16 h-1"
-                     style={{ backgroundColor: service.color }}
-                   ></div>
-                 </div>
-               </div>
-             </motion.div>
-           ))}
-         </div>
-       </section>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-24 relative z-10"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-block bg-gradient-to-r from-udigit-orange/10 to-udigit-blue/10 backdrop-blur-sm border border-udigit-orange/20 rounded-2xl px-8 py-4 mb-8"
+            >
+              <span className="text-udigit-orange font-bold text-lg">Nos Expertises</span>
+            </motion.div>
+            
+            <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-udigit-orange bg-clip-text text-transparent">
+                Solutions Digitales
+              </span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
+              Nous créons des expériences digitales exceptionnelles qui 
+              <span className="font-semibold text-gray-800"> transforment votre vision en succès</span>
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8 relative z-10">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -20,
+                  scale: 1.02,
+                  transition: { duration: 0.4 }
+                }}
+                className="group relative"
+              >
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden transform transition-all duration-500 hover:shadow-3xl relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Service Image Background */}
+                  <div className="relative h-64 overflow-hidden">
+                    <motion.img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.8 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    
+                    {/* Service Icon */}
+                    <div className="absolute top-6 left-6">
+                      <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg">
+                        <span className="text-3xl">{service.icon}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Service Color Accent */}
+                    <div 
+                      className="absolute top-0 left-0 w-full h-1"
+                      style={{ backgroundColor: service.color }}
+                    ></div>
+                  </div>
+                  
+                  <div className="p-8 relative z-10">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-udigit-orange transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                      {service.description}
+                    </p>
+                    
+                    {/* Features List */}
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <motion.div
+                          key={feature}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex items-center space-x-3"
+                        >
+                          <div 
+                            className="w-2 h-2 rounded-full"
+                            style={{ backgroundColor: service.color }}
+                          ></div>
+                          <span className="text-gray-700 font-medium">{feature}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-6"
+                    >
+                      <Link 
+                        to="/services"
+                        className="inline-flex items-center justify-center w-full bg-gradient-to-r from-udigit-orange to-udigit-blue text-white font-bold py-4 px-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        Découvrir
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
              {/* Stats Section - Modern Design */}
        <section className="section-padding bg-gradient-to-br from-orange-50 via-blue-50 to-gray-50 relative overflow-hidden">
          <div className="container-custom">
            <div className="grid md:grid-cols-4 gap-16 text-center">
-             {[
-               { number: "150+", label: "Projets Réalisés", color: "#F18440" },
-               { number: "98%", label: "Clients Satisfaits", color: "#2A4B9B" },
-               { number: "4+", label: "Années d'Expérience", color: "#F18440" },
-               { number: "24/7", label: "Support Client", color: "#2A4B9B" }
-             ].map((stat, index) => (
+                           {[
+                { number: "50+", label: "Projets Réalisés", color: "#F18440" },
+                { number: "98%", label: "Clients Satisfaits", color: "#2A4B9B" },
+                { number: "4+", label: "Années d'Expérience", color: "#F18440" },
+                { number: "24/7", label: "Support Client", color: "#2A4B9B" }
+              ].map((stat, index) => (
                <motion.div
                  key={stat.label}
                  initial={{ opacity: 0, y: 100 }}

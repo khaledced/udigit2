@@ -159,7 +159,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <span className="text-udigit-orange">📞</span>
                 <a
-                  href="tel:+33123456789"
+                  href="tel:+22671784721"
                   className="text-gray-400 hover:text-udigit-orange transition-colors"
                 >
                   +226 71 78 47 21
