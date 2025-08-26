@@ -64,18 +64,19 @@ const Home = () => {
        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
          {/* Video Background */}
          <div className="absolute inset-0 z-0">
-           <video
-             autoPlay
-             loop
-             muted
-             playsInline
-             className="w-full h-full object-cover opacity-40"
-           >
-             <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-             <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4" />
-           </video>
-           {/* Overlay pour assurer la lisibilité du texte */}
-           <div className="absolute inset-0 bg-black/60"></div>
+                       <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-60"
+            >
+              <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4" />
+              <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+            </video>
+            {/* Overlay pour assurer la lisibilité du texte */}
+            <div className="absolute inset-0 bg-black/40"></div>
          </div>
 
          {/* Geometric Background Elements */}

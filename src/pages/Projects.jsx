@@ -749,13 +749,13 @@ const Projects = () => {
         >
           
           
-          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-white mb-8 leading-tight px-4">
             Prêt à créer quelque chose d'
             <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
               extraordinaire
             </span> ?
           </h2>
-          <p className="text-2xl text-white/90 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto font-light leading-relaxed px-4">
             Discutons de votre projet et découvrons comment nous pouvons 
             <span className="font-semibold"> transformer vos idées en réalité digitale</span>
           </p>
