@@ -378,13 +378,13 @@ const Projects = () => {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileHover={{ opacity: 1, scale: 1 }}
-                      className="absolute inset-0 bg-gradient-to-t from-udigit-orange/80 to-transparent flex items-end justify-center pb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 bg-gradient-to-t from-udigit-orange/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
                       <motion.button
                         onClick={() => setSelectedGallery(project)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-blue transition-colors duration-300"
+                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-blue transition-colors duration-300 bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
                       >
                         Voir le projet
                       </motion.button>
@@ -395,9 +395,18 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-udigit-orange transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed font-light">
+                    <p className="text-gray-600 leading-relaxed font-light mb-6">
                       {project.description}
                     </p>
+                    {/* Bouton mobile pour meilleure accessibilité */}
+                    <motion.button
+                      onClick={() => setSelectedGallery(project)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full bg-udigit-orange text-white font-bold py-3 px-6 rounded-lg hover:bg-udigit-orange/90 transition-colors duration-300 md:hidden"
+                    >
+                      Voir le projet
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>
@@ -482,7 +491,7 @@ const Projects = () => {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileHover={{ opacity: 1, scale: 1 }}
-                      className="absolute inset-0 bg-gradient-to-t from-udigit-blue/80 to-transparent flex items-end justify-center pb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 bg-gradient-to-t from-udigit-blue/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
                       <motion.a
                         href={project.driveLink}
@@ -490,7 +499,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-orange transition-colors duration-300"
+                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-orange transition-colors duration-300 bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
                       >
                         Voir le contenu
                       </motion.a>
@@ -501,9 +510,20 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-udigit-blue transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed font-light">
+                    <p className="text-gray-600 leading-relaxed font-light mb-6">
                       {project.description}
                     </p>
+                    {/* Bouton mobile pour meilleure accessibilité */}
+                    <motion.a
+                      href={project.driveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full bg-udigit-blue text-white font-bold py-3 px-6 rounded-lg hover:bg-udigit-blue/90 transition-colors duration-300 md:hidden text-center block"
+                    >
+                      Voir le contenu
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>

@@ -59,24 +59,40 @@ const Home = () => {
     >
              {/* Hero Section - Modern Design */}
        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
-         {/* Geometric Background */}
+         {/* Video Background */}
          <div className="absolute inset-0 z-0">
-           <div className="absolute top-0 left-0 w-96 h-96 bg-udigit-orange opacity-10 rounded-full blur-3xl"></div>
-           <div className="absolute bottom-0 right-0 w-96 h-96 bg-udigit-blue opacity-10 rounded-full blur-3xl"></div>
-           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-udigit-orange opacity-5 rounded-full blur-2xl"></div>
+           <video
+             autoPlay
+             loop
+             muted
+             playsInline
+             className="w-full h-full object-cover opacity-40"
+           >
+             <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+             <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4" />
+           </video>
+           {/* Overlay pour assurer la lisibilité du texte */}
+           <div className="absolute inset-0 bg-black/60"></div>
+         </div>
+
+         {/* Geometric Background Elements */}
+         <div className="absolute inset-0 z-0">
+           <div className="absolute top-0 left-0 w-96 h-96 bg-udigit-orange opacity-20 rounded-full blur-3xl"></div>
+           <div className="absolute bottom-0 right-0 w-96 h-96 bg-udigit-blue opacity-20 rounded-full blur-3xl"></div>
+           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-udigit-orange opacity-10 rounded-full blur-2xl"></div>
          </div>
 
          {/* Grid Pattern */}
-         <div className="absolute inset-0 z-0 opacity-20">
+         <div className="absolute inset-0 z-0 opacity-30">
            <div className="w-full h-full" style={{
-             backgroundImage: `linear-gradient(rgba(241, 132, 64, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(241, 132, 64, 0.1) 1px, transparent 1px)`,
+             backgroundImage: `linear-gradient(rgba(241, 132, 64, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(241, 132, 64, 0.15) 1px, transparent 1px)`,
              backgroundSize: '50px 50px'
            }}></div>
          </div>
 
          {/* Mouse Follow Effect */}
          <motion.div
-           className="fixed w-64 h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-20"
+           className="fixed w-64 h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-30"
            animate={{
              x: mousePosition.x - 128,
              y: mousePosition.y - 128,
@@ -316,14 +332,14 @@ const Home = () => {
              whileHover={{ scale: 1.05, y: -5 }}
              whileTap={{ scale: 0.95 }}
            >
-             <a 
-               href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
-               target="_blank"
-               rel="noopener noreferrer"
-               className="inline-block bg-black text-white text-2xl px-16 py-8 font-bold border-2 border-black hover:bg-transparent hover:text-black transition-all duration-300"
-             >
-               Démarrer votre projet
-             </a>
+                           <a 
+                href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-udigit-blue text-white text-2xl px-16 py-8 font-bold border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300"
+              >
+                Démarrer votre projet
+              </a>
            </motion.div>
          </motion.div>
        </section>
