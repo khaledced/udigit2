@@ -99,14 +99,14 @@ const About = () => {
       transition={{ duration: 0.6 }}
       className="pt-20 relative overflow-hidden"
     >
-             {/* Hero Section with Parallax */}
-       <section className="section-padding bg-gradient-to-br from-orange-50 via-gray-50 to-blue-50 relative overflow-hidden">
-        <motion.div
-          style={{ y }}
-          className="absolute inset-0 opacity-20"
-        >
-          <div className="w-full h-full bg-gradient-to-br from-udigit-orange/30 to-udigit-blue/30"></div>
-        </motion.div>
+             {/* Hero Section - Liquid Glass Design */}
+       <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
+        {/* Liquid Glass Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-100/20 to-blue-200/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
         
         <div className="container-custom relative z-10">
           <motion.div
@@ -115,13 +115,22 @@ const About = () => {
             transition={{ duration: 1 }}
             className="text-center max-w-5xl mx-auto"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block bg-white/70 backdrop-blur-xl border border-white/50 rounded-full px-8 py-3 mb-8 shadow-lg"
+            >
+              <span className="text-gray-700 font-medium text-sm tracking-wider uppercase">À Propos</span>
+            </motion.div>
+            
                          <motion.h1 
                className="text-6xl md:text-8xl font-bold text-gray-800 mb-8"
                initial={{ opacity: 0, scale: 0.5 }}
                animate={{ opacity: 1, scale: 1 }}
                transition={{ duration: 1, delay: 0.2 }}
              >
-               À Propos de <span className="bg-gradient-to-r from-udigit-orange to-udigit-blue bg-clip-text text-transparent">Udigit</span>
+               À Propos de <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-cyan-600 bg-clip-text text-transparent">Udigit</span>
              </motion.h1>
              <motion.p 
                className="text-2xl text-gray-600 leading-relaxed"
@@ -136,8 +145,8 @@ const About = () => {
         </div>
       </section>
 
-             {/* Story Section with Advanced Animations */}
-       <section className="section-padding bg-gradient-to-br from-blue-50 via-gray-50 to-orange-50 relative overflow-hidden">
+             {/* Story Section - Liquid Glass Design */}
+       <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -187,11 +196,11 @@ const About = () => {
               className="relative"
             >
               <motion.div 
-                className="bg-gradient-to-br from-udigit-orange to-udigit-blue p-10 rounded-3xl text-white shadow-2xl"
+                className="bg-white/60 backdrop-blur-2xl p-10 rounded-3xl text-gray-800 shadow-xl border border-white/70"
                 whileHover={{ 
                   scale: 1.05,
                   rotateY: 5,
-                  boxShadow: "0 25px 50px rgba(241, 132, 64, 0.3)"
+                  boxShadow: "0 25px 50px rgba(0,0,0,0.1)"
                 }}
                 transition={{ duration: 0.3 }}
               >
@@ -213,8 +222,8 @@ const About = () => {
         </div>
       </section>
 
-             {/* Values Section */}
-       <section className="section-padding bg-gradient-to-br from-orange-50 via-gray-50 to-blue-50 relative overflow-hidden">
+             {/* Values Section - Liquid Glass Design */}
+       <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -245,10 +254,10 @@ const About = () => {
                 className="text-center group"
               >
                                  <motion.div 
-                   className="w-24 h-24 mx-auto mb-8 shadow-2xl rounded-full overflow-hidden"
+                   className="w-24 h-24 mx-auto mb-8 bg-white/60 backdrop-blur-xl shadow-xl border border-white/70 rounded-full overflow-hidden"
                    whileHover={{ 
                      scale: 1.1,
-                     boxShadow: "0 25px 50px rgba(241, 132, 64, 0.3)"
+                     boxShadow: "0 25px 50px rgba(0,0,0,0.1)"
                    }}
                    transition={{ duration: 0.6 }}
                  >
@@ -272,8 +281,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Social Networks Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 via-gray-50 to-orange-50 relative overflow-hidden">
+      {/* Social Networks Section - Liquid Glass Design */}
+      <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -303,7 +312,7 @@ const About = () => {
                  whileHover={{ y: -20, rotateY: 5, scale: 1.05 }}
                  className="group relative"
                >
-                 <div className="bg-gradient-to-br from-white/90 to-gray-50/90 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-gray-200/50 overflow-hidden hover:shadow-3xl transition-all duration-500">
+                 <div className="bg-white/60 backdrop-blur-2xl p-8 rounded-3xl shadow-xl border border-white/70 overflow-hidden hover:shadow-2xl hover:bg-white/80 transition-all duration-500">
                    {/* Social Network Icon */}
                    <motion.div 
                      className={`w-24 h-24 bg-gradient-to-r ${network.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl`}
@@ -346,7 +355,7 @@ const About = () => {
                      <motion.div
                        whileHover={{ scale: 1.05 }}
                        whileTap={{ scale: 0.95 }}
-                       className="w-full bg-udigit-blue text-white font-bold py-3 px-6 rounded-xl hover:shadow-xl transition-all duration-300 text-center cursor-pointer"
+                       className="w-full bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white font-bold py-3 px-6 rounded-xl hover:from-udigit-blue hover:to-cyan-600 backdrop-blur-xl border border-white/60 hover:shadow-xl transition-all duration-300 text-center cursor-pointer"
                      >
                        Suivre
                      </motion.div>

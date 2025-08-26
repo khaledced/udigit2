@@ -60,7 +60,7 @@ const Projects = () => {
   const contentCreations = [
     {
       id: 1,
-      title: "Contenu promotionionnel pour un restaurant",
+      title: "Contenu promotionnel pour un restaurant",
       description: "Série de contenus pour l'ouverture d'un nouveau restaurant.",
       image: "/images/melina.jpg",
       platform: "Instagram",

@@ -99,14 +99,14 @@ const Services = () => {
       transition={{ duration: 0.6 }}
       className="pt-20 relative overflow-hidden"
     >
-      {/* Hero Section with Parallax */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 via-gray-50 to-orange-50 relative overflow-hidden">
-        <motion.div
-          style={{ y }}
-          className="absolute inset-0 opacity-20"
-        >
-          <div className="w-full h-full bg-gradient-to-br from-udigit-orange/20 to-udigit-blue/20"></div>
-        </motion.div>
+      {/* Hero Section - Liquid Glass Design */}
+      <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
+        {/* Liquid Glass Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-100/20 to-blue-200/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
         
         <div className="container-custom relative z-10">
           <motion.div
@@ -115,13 +115,22 @@ const Services = () => {
             transition={{ duration: 1 }}
             className="text-center max-w-5xl mx-auto"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-block bg-white/70 backdrop-blur-xl border border-white/50 rounded-full px-8 py-3 mb-8 shadow-lg"
+            >
+              <span className="text-gray-700 font-medium text-sm tracking-wider uppercase">Nos Services</span>
+            </motion.div>
+            
             <motion.h1 
               className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-gray-800 mb-6 md:mb-8 px-4"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Nos <span className="bg-gradient-to-r from-udigit-orange to-udigit-blue bg-clip-text text-transparent">Services</span>
+              Nos <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-cyan-600 bg-clip-text text-transparent">Services</span>
             </motion.h1>
             <motion.p 
               className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed px-4"
@@ -136,13 +145,13 @@ const Services = () => {
         </div>
       </section>
 
-                    {/* Services Grid - Refonte Exceptionnelle */}
-        <section className="section-padding bg-white relative overflow-hidden">
-          {/* Background Effects */}
+                    {/* Services Grid - Liquid Glass Design */}
+        <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
+          {/* Liquid Glass Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-udigit-orange opacity-10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-udigit-blue opacity-10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-udigit-orange opacity-5 rounded-full blur-2xl"></div>
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-100/20 to-blue-200/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
 
          <div className="container-custom relative z-10 px-4">
@@ -166,15 +175,16 @@ const Services = () => {
                  }}
                  className="group relative"
                >
-                                   {/* Card Container avec effet glassmorphism */}
-                  <div className="relative bg-gradient-to-br from-gray-50/90 to-white/90 backdrop-blur-2xl p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl border border-gray-200/50 overflow-hidden">
+                                   {/* Liquid Glass Card Container */}
+                  <div className="relative bg-white/60 backdrop-blur-2xl p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-xl border border-white/70 overflow-hidden transform transition-all duration-500 hover:bg-white/80 hover:border-white/90 hover:shadow-2xl">
                    
-                   {/* Effet de bordure animée */}
+                   {/* Liquid Glass Border Effect */}
                    <motion.div 
                      className="absolute inset-0 rounded-3xl"
                      style={{
                        background: `linear-gradient(45deg, ${service.color.includes('orange') ? '#F18440' : '#2A4B9B'}, transparent, ${service.color.includes('orange') ? '#2A4B9B' : '#F18440'})`,
-                       backgroundSize: '400% 400%'
+                       backgroundSize: '400% 400%',
+                       opacity: 0.3
                      }}
                      animate={{
                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
@@ -185,7 +195,7 @@ const Services = () => {
                        ease: "easeInOut"
                      }}
                    />
-                                       <div className="absolute inset-[2px] bg-gradient-to-br from-gray-50/95 to-white/95 rounded-3xl"></div>
+                   <div className="absolute inset-[2px] bg-white/60 backdrop-blur-2xl rounded-3xl"></div>
                    
                    {/* Background Pattern */}
                    <div className="absolute inset-0 opacity-5">
@@ -387,8 +397,8 @@ const Services = () => {
          </div>
        </section>
 
-                     {/* Process Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-50 via-blue-50 to-orange-50 relative overflow-hidden">
+                     {/* Process Section - Liquid Glass Design */}
+        <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -426,10 +436,10 @@ const Services = () => {
                      transition: { duration: 0.4 }
                    }}
                  >
-                                       {/* Cercle principal avec design futuriste */}
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gradient-to-br from-blue-50 to-orange-50 border-2 border-udigit-orange rounded-full flex items-center justify-center shadow-2xl relative overflow-hidden">
-                      {/* Effet de profondeur */}
-                      <div className="absolute inset-2 bg-gradient-to-br from-udigit-orange/20 to-udigit-blue/20 rounded-full"></div>
+                                       {/* Liquid Glass Circle Design */}
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white/60 backdrop-blur-xl border-2 border-white/70 rounded-full flex items-center justify-center shadow-xl relative overflow-hidden">
+                      {/* Liquid Glass Depth Effect */}
+                      <div className="absolute inset-2 bg-gradient-to-br from-udigit-orange/10 to-udigit-blue/10 rounded-full"></div>
                      
                      {/* Lignes géométriques */}
                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-8 bg-udigit-orange opacity-80"></div>
@@ -491,8 +501,8 @@ const Services = () => {
         </div>
       </section>
 
-             {/* Technologies Section */}
-       <section className="section-padding bg-white relative overflow-hidden">
+             {/* Technologies Section - Liquid Glass Design */}
+       <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -526,7 +536,7 @@ const Services = () => {
                   y: -10,
                   boxShadow: "0 20px 40px rgba(241, 132, 64, 0.2)"
                 }}
-                                                                   className="bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-lg p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-gray-200/50 text-center hover:border-udigit-orange/50 transition-all duration-300"
+                                                                   className="bg-white/60 backdrop-blur-2xl p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-white/70 text-center hover:border-udigit-orange/50 hover:bg-white/80 transition-all duration-300"
               >
                                                                    <div className="text-black font-semibold text-sm sm:text-base md:text-lg">{tech}</div>
               </motion.div>
@@ -535,7 +545,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Liquid Glass Design */}
       <section className="section-padding bg-gradient-to-r from-udigit-orange to-udigit-blue relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -561,7 +571,7 @@ const Services = () => {
               boxShadow: "0 25px 50px rgba(0,0,0,0.3)"
             }}
             whileTap={{ scale: 0.95 }}
-                         className="bg-white text-udigit-orange font-bold py-4 sm:py-6 px-8 sm:px-12 rounded-xl sm:rounded-2xl text-lg sm:text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl inline-block cursor-pointer"
+                         className="bg-white/90 backdrop-blur-xl text-udigit-orange font-bold py-4 sm:py-6 px-8 sm:px-12 rounded-xl sm:rounded-2xl text-lg sm:text-xl hover:bg-white transition-all duration-300 shadow-2xl border border-white/60 inline-block cursor-pointer"
           >
             Demander un devis
           </motion.a>
