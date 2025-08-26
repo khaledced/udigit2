@@ -196,13 +196,229 @@ const Home = () => {
          </motion.div>
        </section>
 
-                     {/* Services Section - Futuristic Design */}
-        <section className="section-padding bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-20 left-20 w-96 h-96 bg-udigit-orange rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-udigit-blue rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-udigit-orange to-udigit-blue rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                                                                                       {/* Services Section - Liquid Glass Design */}
+          <section className="section-padding bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 relative overflow-hidden">
+            {/* Liquid Glass Background Elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/40 to-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-300/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-100/30 to-blue-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            </div>
+
+            <div className="container-custom relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-20"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="inline-block bg-white/70 backdrop-blur-xl border border-white/50 rounded-full px-8 py-3 mb-8 shadow-lg"
+                >
+                  <span className="text-gray-700 font-medium text-sm tracking-wider uppercase">Nos Expertises</span>
+                </motion.div>
+                
+                <h2 className="text-5xl md:text-7xl font-black text-gray-800 mb-8 leading-tight">
+                  <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-cyan-600 bg-clip-text text-transparent">
+                    Solutions Digitales
+                  </span>
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+                  Nous créons des expériences digitales exceptionnelles qui 
+                  <span className="font-semibold text-gray-800"> transforment votre vision en succès</span>
+                </p>
+              </motion.div>
+
+              {/* Services Grid - Liquid Glass Cards */}
+              <div className="grid lg:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 1, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ 
+                      y: -10,
+                      scale: 1.02,
+                      transition: { duration: 0.4 }
+                    }}
+                    className="group relative"
+                  >
+                    {/* Liquid Glass Card Design */}
+                    <div className="relative bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 overflow-hidden transform transition-all duration-500 hover:bg-white/80 hover:border-white/90 hover:shadow-2xl shadow-xl">
+                      
+                      {/* Top Section with Image */}
+                      <div className="relative h-48 overflow-hidden">
+                        <motion.img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.8 }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        
+                        {/* Floating Icon - Liquid Glass */}
+                        <div className="absolute top-4 left-4">
+                          <div className="w-12 h-12 bg-white/80 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/60 group-hover:bg-white/90 transition-all duration-300 shadow-lg">
+                            <span className="text-xl">{service.icon}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Service Badge - Liquid Glass */}
+                        <div className="absolute top-4 right-4">
+                          <div className="px-3 py-1 bg-white/80 backdrop-blur-xl rounded-full border border-white/60 shadow-lg">
+                            <span className="text-gray-700 text-xs font-medium">Service {index + 1}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Content Section */}
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-udigit-orange transition-colors duration-300">
+                          {service.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                          {service.description}
+                        </p>
+                        
+                        {/* Features Grid */}
+                        <div className="grid grid-cols-2 gap-3 mb-6">
+                          {service.features.slice(0, 4).map((feature, featureIndex) => (
+                            <motion.div
+                              key={feature}
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
+                              viewport={{ once: true }}
+                              className="flex items-center space-x-2"
+                            >
+                              <div 
+                                className="w-1.5 h-1.5 rounded-full"
+                                style={{ backgroundColor: service.color }}
+                              ></div>
+                              <span className="text-gray-600 text-xs font-medium">{feature}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                        
+                        {/* Liquid Glass CTA Button */}
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="relative overflow-hidden rounded-xl"
+                        >
+                          <Link 
+                            to="/services"
+                            className={`block w-full text-center py-3 px-4 font-semibold text-sm transition-all duration-300 relative overflow-hidden backdrop-blur-xl border border-white/60 ${
+                              index === 0 
+                                ? 'bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white hover:from-udigit-blue hover:to-cyan-600' 
+                                : index === 1 
+                                ? 'bg-gradient-to-r from-udigit-orange/80 to-orange-500/80 text-white hover:from-udigit-orange hover:to-orange-500'
+                                : 'bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white hover:from-udigit-blue hover:to-cyan-600'
+                            }`}
+                          >
+                            <span className="relative z-10 flex items-center justify-center">
+                              <span>Explorer</span>
+                              <motion.svg 
+                                className="w-4 h-4 ml-2" 
+                                fill="none" 
+                                stroke="currentColor" 
+                                viewBox="0 0 24 24"
+                                animate={{ x: [0, 3, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity }}
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                              </motion.svg>
+                            </span>
+                            {/* Liquid Glass Shimmer Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]"></div>
+                          </Link>
+                        </motion.div>
+                      </div>
+                      
+                      {/* Bottom Accent - Liquid Glass */}
+                      <div 
+                        className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-40"
+                        style={{ color: service.color }}
+                      ></div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+                           {/* Stats Section - Liquid Glass Design */}
+        <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
+          {/* Liquid Glass Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+
+          <div className="container-custom relative z-10">
+            <div className="grid md:grid-cols-4 gap-16 text-center">
+                            {[
+                 { number: "50+", label: "Projets Réalisés", color: "#F18440" },
+                 { number: "98%", label: "Clients Satisfaits", color: "#2A4B9B" },
+                 { number: "4+", label: "Années d'Expérience", color: "#F18440" },
+                 { number: "24/7", label: "Support Client", color: "#2A4B9B" }
+               ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.05 }}
+                  className="group"
+                >
+                  {/* Liquid Glass Stat Card */}
+                  <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/80">
+                    <div 
+                      className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl border border-white/60 flex items-center justify-center shadow-lg"
+                      style={{ 
+                        borderColor: stat.color,
+                      }}
+                    >
+                      <div 
+                        className="w-8 h-8 rounded-full"
+                        style={{ backgroundColor: stat.color }}
+                      ></div>
+                    </div>
+                    
+                    <motion.div 
+                      className="text-5xl md:text-7xl font-black mb-4"
+                      style={{ color: stat.color }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {stat.number}
+                    </motion.div>
+                    
+                    <div className="text-lg text-gray-700 font-medium">
+                      {stat.label}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+                           {/* CTA Section - Liquid Glass Design */}
+        <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
+          {/* Liquid Glass Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
 
           <motion.div
@@ -210,204 +426,40 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-24 relative z-10"
+            className="container-custom text-center relative z-10"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="inline-block bg-gradient-to-r from-udigit-orange/10 to-udigit-blue/10 backdrop-blur-sm border border-udigit-orange/20 rounded-2xl px-8 py-4 mb-8"
-            >
-              <span className="text-udigit-orange font-bold text-lg">Nos Expertises</span>
-            </motion.div>
-            
-            <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-udigit-orange bg-clip-text text-transparent">
-                Solutions Digitales
-              </span>
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
-              Nous créons des expériences digitales exceptionnelles qui 
-              <span className="font-semibold text-gray-800"> transforment votre vision en succès</span>
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-3 gap-8 relative z-10">
-            {services.map((service, index) => (
+            {/* Liquid Glass CTA Card */}
+            <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-12 md:p-16 shadow-xl max-w-6xl mx-auto">
+              <h2 className="text-5xl md:text-7xl font-black text-gray-800 mb-8">
+                <span className="text-udigit-orange">Prêt à transformer</span>
+                <br />
+                <span className="text-gray-800">votre vision</span>
+                <br />
+                <span className="text-udigit-blue">en réalité ?</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto font-light">
+                Discutons de votre projet et découvrons comment nous pouvons 
+                vous aider à atteindre vos objectifs.
+              </p>
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 100, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 1, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -20,
-                  scale: 1.02,
-                  transition: { duration: 0.4 }
-                }}
-                className="group relative"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative overflow-hidden rounded-2xl"
               >
-                <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 overflow-hidden transform transition-all duration-500 hover:shadow-3xl relative">
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Service Image Background */}
-                  <div className="relative h-64 overflow-hidden">
-                    <motion.img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.8 }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    
-                    {/* Service Icon */}
-                    <div className="absolute top-6 left-6">
-                      <div className="w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg">
-                        <span className="text-3xl">{service.icon}</span>
-                      </div>
-                    </div>
-                    
-                    {/* Service Color Accent */}
-                    <div 
-                      className="absolute top-0 left-0 w-full h-1"
-                      style={{ backgroundColor: service.color }}
-                    ></div>
-                  </div>
-                  
-                  <div className="p-8 relative z-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-udigit-orange transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">
-                      {service.description}
-                    </p>
-                    
-                    {/* Features List */}
-                    <div className="space-y-3 mb-6">
-                      {service.features.map((feature, featureIndex) => (
-                        <motion.div
-                          key={feature}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
-                          viewport={{ once: true }}
-                          className="flex items-center space-x-3"
-                        >
-                          <div 
-                            className="w-2 h-2 rounded-full"
-                            style={{ backgroundColor: service.color }}
-                          ></div>
-                          <span className="text-gray-700 font-medium">{feature}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                    
-                    {/* CTA Button */}
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="mt-6"
-                    >
-                      <Link 
-                        to="/services"
-                        className="inline-flex items-center justify-center w-full bg-gradient-to-r from-udigit-orange to-udigit-blue text-white font-bold py-4 px-6 rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                      >
-                        Découvrir
-                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    </motion.div>
-                  </div>
-                </div>
+                <a 
+                  href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white text-xl sm:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-8 font-bold rounded-2xl border border-white/60 backdrop-blur-xl hover:from-udigit-blue hover:to-cyan-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden"
+                >
+                  <span className="relative z-10">Démarrer votre projet</span>
+                  {/* Liquid Glass Shimmer Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 translate-x-[-100%] hover:translate-x-[100%]"></div>
+                </a>
               </motion.div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
         </section>
-
-             {/* Stats Section - Modern Design */}
-       <section className="section-padding bg-gradient-to-br from-orange-50 via-blue-50 to-gray-50 relative overflow-hidden">
-         <div className="container-custom">
-           <div className="grid md:grid-cols-4 gap-16 text-center">
-                           {[
-                { number: "50+", label: "Projets Réalisés", color: "#F18440" },
-                { number: "98%", label: "Clients Satisfaits", color: "#2A4B9B" },
-                { number: "4+", label: "Années d'Expérience", color: "#F18440" },
-                { number: "24/7", label: "Support Client", color: "#2A4B9B" }
-              ].map((stat, index) => (
-               <motion.div
-                 key={stat.label}
-                 initial={{ opacity: 0, y: 100 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 1, delay: index * 0.2 }}
-                 viewport={{ once: true }}
-                 whileHover={{ y: -10 }}
-                 className="group"
-               >
-                 <div 
-                   className="w-24 h-24 mx-auto mb-8 border-2"
-                   style={{ 
-                     borderColor: stat.color,
-                     backgroundColor: `${stat.color}20`
-                   }}
-                 ></div>
-                 
-                 <motion.div 
-                   className="text-6xl md:text-8xl font-black mb-4"
-                   style={{ color: stat.color }}
-                   whileHover={{ scale: 1.1 }}
-                 >
-                   {stat.number}
-                 </motion.div>
-                 
-                 <div className="text-xl text-gray-700 font-light">
-                   {stat.label}
-                 </div>
-               </motion.div>
-             ))}
-           </div>
-         </div>
-       </section>
-
-             {/* CTA Section - Modern Design */}
-       <section className="section-padding bg-white relative overflow-hidden">
-         <motion.div
-           initial={{ opacity: 0, y: 50 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-           viewport={{ once: true }}
-           className="container-custom text-center relative z-10"
-         >
-           <h2 className="text-6xl md:text-8xl font-black text-black mb-8">
-             <span className="text-udigit-orange">Prêt à transformer</span>
-             <br />
-             <span className="text-black">votre vision</span>
-             <br />
-             <span className="text-udigit-blue">en réalité ?</span>
-           </h2>
-           <p className="text-2xl text-gray-600 mb-16 max-w-4xl mx-auto font-light">
-             Discutons de votre projet et découvrons comment nous pouvons 
-             vous aider à atteindre vos objectifs.
-           </p>
-           <motion.div
-             whileHover={{ scale: 1.05, y: -5 }}
-             whileTap={{ scale: 0.95 }}
-           >
-                           <a 
-                href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-udigit-blue text-white text-xl sm:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-8 font-bold rounded-2xl border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Démarrer votre projet
-              </a>
-           </motion.div>
-         </motion.div>
-       </section>
     </motion.div>
   )
 }
