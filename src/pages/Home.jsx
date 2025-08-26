@@ -85,7 +85,7 @@ const Home = () => {
          />
 
          <div className="container-custom section-padding relative z-20">
-           <div className="text-center max-w-6xl mx-auto">
+           <div className="text-center max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto">
                            <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -93,24 +93,24 @@ const Home = () => {
                 className="mb-20"
               >
                 <motion.h1 
-                  className="text-7xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] tracking-tight"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tight px-4"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1.2, delay: 0.4 }}
                 >
-                  <div className="mb-8">
+                  <div className="mb-4 sm:mb-6 md:mb-8">
                     <span className="text-udigit-orange">Nous créons</span>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-4 sm:mb-6 md:mb-8">
                     <span className="text-white">des designs</span>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-4 sm:mb-6 md:mb-8">
                     <span className="text-udigit-blue">ambassadeurs</span>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-4 sm:mb-6 md:mb-8">
                     <span className="text-white">de votre</span>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-4 sm:mb-6 md:mb-8">
                     <span className="text-udigit-orange">marque</span>
                   </div>
                 </motion.h1>
@@ -120,7 +120,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 1 }}
-                className="text-2xl md:text-3xl text-gray-300 mb-20 max-w-5xl mx-auto leading-relaxed font-light"
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 sm:mb-16 md:mb-20 max-w-4xl sm:max-w-5xl mx-auto leading-relaxed font-light px-4"
               >
                 Udigit est une agence créative au Burkina Faso qui allie marketing digital, design, contenu et solutions web pour donner vie à vos projets.
               </motion.p>
@@ -129,13 +129,13 @@ const Home = () => {
                initial={{ opacity: 0, y: 50 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 1.6, duration: 1 }}
-               className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+               className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-center px-4"
              >
                <motion.div
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/projects" className="inline-block bg-udigit-orange text-white text-xl px-12 py-6 font-bold rounded-none border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
+                 <Link to="/projects" className="inline-block bg-udigit-orange text-white text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 font-bold rounded-none border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
                    Voir nos projets
                  </Link>
                </motion.div>
@@ -143,7 +143,7 @@ const Home = () => {
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/services" className="inline-block bg-transparent text-white text-xl px-12 py-6 font-bold rounded-none border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                 <Link to="/services" className="inline-block bg-transparent text-white text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 font-bold rounded-none border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
                    Nos services
                  </Link>
                </motion.div>
