@@ -108,7 +108,7 @@ const Navbar = () => {
                href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20suis%20intéressé%20par%20vos%20services%20digitaux."
                target="_blank"
                rel="noopener noreferrer"
-               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-udigit-blue to-cyan-500 text-white font-semibold rounded-lg hover:from-udigit-blue/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-0"
+                               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-udigit-blue to-cyan-500 text-white font-semibold rounded-full hover:from-udigit-blue/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-0"
              >
                <MessageCircle className="w-5 h-5 mr-2" />
                Contact
@@ -169,7 +169,7 @@ const Navbar = () => {
                      target="_blank"
                      rel="noopener noreferrer"
                      onClick={() => setIsOpen(false)}
-                     className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-udigit-blue to-cyan-500 text-white font-semibold rounded-lg hover:from-udigit-blue/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-0"
+                                           className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-udigit-blue to-cyan-500 text-white font-semibold rounded-full hover:from-udigit-blue/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-0"
                    >
                      <MessageCircle className="w-5 h-5 mr-2" />
                      Contact

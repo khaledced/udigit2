@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { 
   Wrench, 
   Monitor, 
@@ -20,6 +20,7 @@ import Icon from '../components/Icon'
 const Services = () => {
   const containerRef = useRef(null)
   const [expandedServices, setExpandedServices] = useState({})
+  const [isMobile, setIsMobile] = useState(false)
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,6 +29,17 @@ const Services = () => {
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0])
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const toggleServiceExpansion = (serviceTitle) => {
     setExpandedServices(prev => ({
@@ -102,10 +114,10 @@ const Services = () => {
     }
   ]
 
-  const technologies = [
-    "React", "Figma", "Node.js", "PHP", "WordPress", "Adobe XD",
-    "Adobe Illustrator", "Adobe Photoshop", "Canva", "PostgreSQL", "MongoDB", "Cloud"
-  ]
+     const technologies = [
+     "React", "Figma", "Node.js", "PHP", "WordPress", "Adobe XD",
+     "Illustrator", "Photoshop", "Canva", "PostgreSQL", "MongoDB", "Cloud"
+   ]
 
   return (
     <motion.div
@@ -312,9 +324,9 @@ const Services = () => {
                      
                                            {/* Features compactes avec effet de survol */}
                       <div className="relative">
-                        {/* Affichage principal - 3 points clés */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-6 px-2">
-                          {service.features.slice(0, 3).map((feature, featureIndex) => (
+                                                 {/* Affichage principal - 2 points clés sur mobile, 3 sur desktop */}
+                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-6 px-2">
+                           {service.features.slice(0, isMobile ? 2 : 3).map((feature, featureIndex) => (
                             <motion.div
                               key={feature}
                               initial={{ opacity: 0, y: 20 }}
@@ -324,7 +336,7 @@ const Services = () => {
                                 delay: featureIndex * 0.1
                               }}
                               viewport={{ once: true }}
-                              className="text-center p-2 md:p-3 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200/50 hover:border-udigit-orange/50 transition-all duration-300 group/feature"
+                              className="text-center p-2 md:p-3 rounded-full bg-gradient-to-br from-gray-50 to-white border border-gray-200/50 hover:border-udigit-orange/50 transition-all duration-300 group/feature"
                             >
                               <div className="w-3 h-3 bg-gradient-to-r from-udigit-orange to-udigit-blue rounded-full mx-auto mb-2 opacity-60 group-hover/feature:opacity-100 transition-opacity"></div>
                               <span className="text-xs md:text-sm font-medium text-gray-600 group-hover/feature:text-black transition-colors">
@@ -344,8 +356,8 @@ const Services = () => {
                           transition={{ duration: 0.5, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
-                            {service.features.slice(3).map((feature, featureIndex) => (
+                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
+                             {service.features.slice(isMobile ? 2 : 3).map((feature, featureIndex) => (
                               <motion.div
                                 key={feature}
                                 initial={{ opacity: 0, y: 20 }}
@@ -354,7 +366,7 @@ const Services = () => {
                                   duration: 0.5, 
                                   delay: featureIndex * 0.1
                                 }}
-                                className="text-center p-2 md:p-3 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200/50 hover:border-udigit-orange/50 transition-all duration-300 group/feature"
+                                className="text-center p-2 md:p-3 rounded-full bg-gradient-to-br from-gray-50 to-white border border-gray-200/50 hover:border-udigit-orange/50 transition-all duration-300 group/feature"
                               >
                                 <div className="w-3 h-3 bg-gradient-to-r from-udigit-orange to-udigit-blue rounded-full mx-auto mb-2 opacity-60 group-hover/feature:opacity-100 transition-opacity"></div>
                                 <span className="text-xs md:text-sm font-medium text-gray-600 group-hover/feature:text-black transition-colors">
@@ -547,7 +559,7 @@ const Services = () => {
                   y: -10,
                   boxShadow: "0 20px 40px rgba(241, 132, 64, 0.2)"
                 }}
-                                                                   className="bg-white/60 backdrop-blur-2xl p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-white/70 text-center hover:border-udigit-orange/50 hover:bg-white/80 transition-all duration-300"
+                                                                   className="bg-white/60 backdrop-blur-2xl p-4 sm:p-6 rounded-full shadow-xl border border-white/70 text-center hover:border-udigit-orange/50 hover:bg-white/80 transition-all duration-300"
               >
                                                                    <div className="text-black font-semibold text-sm sm:text-base md:text-lg">{tech}</div>
               </motion.div>
@@ -576,7 +588,7 @@ const Services = () => {
             href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20demander%20un%20devis%20pour%20mes%20besoins%20digitaux%20avec%20votre%20agence%20Udigit."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-udigit-orange bg-white hover:bg-gray-50 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-white"
+                         className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-udigit-orange bg-white hover:bg-gray-50 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-white"
           >
             <MessageCircle className="mr-3 w-6 h-6" />
             Demander un devis

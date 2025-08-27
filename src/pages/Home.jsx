@@ -138,7 +138,7 @@ const Home = () => {
                     <span className="text-udigit-orange">Nous créons des</span>
                   </div>
                   <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
-                    <span className="text-white">designs ambassadeurs de</span>
+                    <span className="text-white">designs ambassadeurs</span>
                   </div>
                   <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
                     <span className="text-white">de </span>
@@ -166,7 +166,7 @@ const Home = () => {
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/projects" className="inline-block bg-udigit-orange text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-none border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
+                                   <Link to="/projects" className="inline-block bg-udigit-orange text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-full border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
                    Voir nos projets
                  </Link>
                </motion.div>
@@ -174,7 +174,7 @@ const Home = () => {
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/services" className="inline-block bg-transparent text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-none border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                                   <Link to="/services" className="inline-block bg-transparent text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-full border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
                    Nos services
                  </Link>
                </motion.div>
@@ -295,7 +295,7 @@ const Home = () => {
                                                    {/* Liquid Glass CTA Button */}
                           <Link 
                             to="/services"
-                            className={`inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${
+                            className={`inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold rounded-full transition-all duration-300 ${
                               index === 0 
                                 ? 'bg-udigit-orange text-white hover:bg-udigit-orange/90 border-2 border-udigit-orange' 
                                 : index === 1 
@@ -347,22 +347,38 @@ const Home = () => {
                 >
                   {/* Liquid Glass Stat Card */}
                   <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-4 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/80">
-                    <div 
-                      className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-3 sm:mb-4 md:mb-6 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl border border-white/60 flex items-center justify-center shadow-lg"
-                      style={{ 
-                        borderColor: stat.color,
-                      }}
-                    >
-                      {index === 0 ? (
-                        <FolderOpen className="w-full h-full text-white" />
-                      ) : index === 1 ? (
-                        <Heart className="w-full h-full text-white" />
-                      ) : index === 2 ? (
-                        <Calendar className="w-full h-full text-white" />
-                      ) : (
-                        <Headphones className="w-full h-full text-white" />
-                      )}
-                    </div>
+                                         <div 
+                       className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-3 sm:mb-4 md:mb-6 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl border border-white/60 flex items-center justify-center shadow-lg"
+                       style={{ 
+                         borderColor: stat.color,
+                       }}
+                     >
+                       {index === 0 ? (
+                         <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center">
+                           <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+                           </svg>
+                         </div>
+                       ) : index === 1 ? (
+                         <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center">
+                           <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                           </svg>
+                         </div>
+                       ) : index === 2 ? (
+                         <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center">
+                           <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                           </svg>
+                         </div>
+                       ) : (
+                         <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center">
+                           <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                           </svg>
+                         </div>
+                       )}
+                     </div>
                     
                     <motion.div 
                       className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-2 sm:mb-3 md:mb-4"
@@ -414,7 +430,7 @@ const Home = () => {
                  href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-udigit-orange hover:bg-udigit-orange/90 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-udigit-orange hover:bg-udigit-orange/90 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                >
                  <MessageCircle className="mr-3 w-6 h-6" />
                  Démarrer votre projet
