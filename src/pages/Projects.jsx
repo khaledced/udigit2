@@ -1,5 +1,21 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { 
+  Palette, 
+  Package, 
+  Image, 
+  Video, 
+  Monitor, 
+  ExternalLink, 
+  Eye, 
+  X,
+  ArrowRight,
+  Star,
+  Users,
+  Award
+} from 'lucide-react'
+import Button from '../components/Button'
+import Icon from '../components/Icon'
 
 const Projects = () => {
   const containerRef = useRef(null)
@@ -214,7 +230,7 @@ const Projects = () => {
              </motion.div>
              
              <motion.h1 
-               className="text-7xl md:text-9xl font-black text-gray-900 mb-8 leading-tight"
+               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight px-4"
                initial={{ opacity: 0, scale: 0.5 }}
                animate={{ opacity: 1, scale: 1 }}
                transition={{ duration: 1.2, delay: 0.5 }}
@@ -223,7 +239,7 @@ const Projects = () => {
              </motion.h1>
             
             <motion.p 
-              className="text-2xl md:text-3xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-light"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-light px-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
@@ -236,7 +252,7 @@ const Projects = () => {
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, delay: 0.9 }}
-               className="mt-12 flex flex-wrap justify-center gap-6"
+               className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-6 px-4"
              >
                <motion.div
                  whileHover={{ scale: 1.05, y: -5 }}
@@ -336,18 +352,18 @@ const Projects = () => {
                </motion.div>
              </motion.div>
              
-             <h2 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 leading-tight">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight px-4">
                <span className="bg-gradient-to-r from-udigit-orange to-udigit-blue bg-clip-text text-transparent">
                  Conceptions Graphiques
                </span>
              </h2>
-             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light px-4">
                Créations visuelles uniques qui donnent vie à votre identité de marque avec 
                <span className="font-semibold text-gray-800"> passion et expertise</span>
              </p>
            </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 px-4">
             {graphicDesigns.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -380,33 +396,37 @@ const Projects = () => {
                       whileHover={{ opacity: 1, scale: 1 }}
                       className="absolute inset-0 bg-gradient-to-t from-udigit-orange/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
-                      <motion.button
+                      <Button
                         onClick={() => setSelectedGallery(project)}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-blue transition-colors duration-300 bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
+                        variant="secondary"
+                        size="md"
+                        icon={Eye}
+                        iconPosition="left"
+                        className="bg-black/50 backdrop-blur-sm"
                       >
                         Voir le projet
-                      </motion.button>
+                      </Button>
                     </motion.div>
                   </div>
                   
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-udigit-orange transition-colors duration-300">
+                  <div className="p-4 sm:p-6 md:p-8">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-udigit-orange transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed font-light mb-6">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light mb-4 sm:mb-6">
                       {project.description}
                     </p>
                     {/* Bouton mobile pour meilleure accessibilité */}
-                    <motion.button
+                    <Button
                       onClick={() => setSelectedGallery(project)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full bg-udigit-orange text-white font-bold py-3 px-6 rounded-lg hover:bg-udigit-orange/90 transition-colors duration-300 md:hidden"
+                      variant="primary"
+                      size="md"
+                      icon={Eye}
+                      iconPosition="left"
+                      className="w-full md:hidden"
                     >
                       Voir le projet
-                    </motion.button>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -493,16 +513,19 @@ const Projects = () => {
                       whileHover={{ opacity: 1, scale: 1 }}
                       className="absolute inset-0 bg-gradient-to-t from-udigit-blue/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
-                      <motion.a
+                      <Button
+                        as="a"
                         href={project.driveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="text-white font-bold text-lg cursor-pointer hover:text-udigit-orange transition-colors duration-300 bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
+                        variant="secondary"
+                        size="md"
+                        icon={ExternalLink}
+                        iconPosition="left"
+                        className="bg-black/50 backdrop-blur-sm"
                       >
                         Voir le contenu
-                      </motion.a>
+                      </Button>
                     </motion.div>
                   </div>
                   
@@ -514,16 +537,19 @@ const Projects = () => {
                       {project.description}
                     </p>
                     {/* Bouton mobile pour meilleure accessibilité */}
-                    <motion.a
+                    <Button
+                      as="a"
                       href={project.driveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full bg-udigit-blue text-white font-bold py-3 px-6 rounded-lg hover:bg-udigit-blue/90 transition-colors duration-300 md:hidden text-center block"
+                      variant="primary"
+                      size="md"
+                      icon={ExternalLink}
+                      iconPosition="left"
+                      className="w-full md:hidden"
                     >
                       Voir le contenu
-                    </motion.a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -843,14 +869,15 @@ const Projects = () => {
                   <span className="text-gray-600 font-medium">
                     {selectedGallery.gallery.length} images dans cette galerie
                   </span>
-                  <motion.button
+                  <Button
                     onClick={() => setSelectedGallery(null)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-udigit-orange text-white px-6 py-3 rounded-xl font-semibold hover:bg-udigit-orange/90 transition-colors"
+                    variant="primary"
+                    size="md"
+                    icon={X}
+                    iconPosition="left"
                   >
                     Fermer
-                  </motion.button>
+                  </Button>
                 </div>
               </div>
             </motion.div>
@@ -876,16 +903,13 @@ const Projects = () => {
                onClick={(e) => e.stopPropagation()}
              >
                {/* Close Button */}
-               <motion.button
+               <Button
                  onClick={() => setSelectedImage(null)}
-                 whileHover={{ scale: 1.1, rotate: 90 }}
-                 whileTap={{ scale: 0.9 }}
-                 className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-               >
-                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                 </svg>
-               </motion.button>
+                 variant="ghost"
+                 size="sm"
+                 icon={X}
+                 className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30"
+               />
 
                {/* Image */}
                <motion.img

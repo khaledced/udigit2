@@ -44,3 +44,354 @@
     text-wrap: balance;
   }
 }
+
+/* Custom styles for better responsiveness */
+@layer utilities {
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+  
+  .text-responsive-4xl {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+  
+  .text-responsive-5xl {
+    @apply text-5xl sm:text-6xl md:text-7xl;
+  }
+  
+  .text-responsive-6xl {
+    @apply text-6xl sm:text-7xl md:text-8xl;
+  }
+  
+  .text-responsive-7xl {
+    @apply text-7xl sm:text-8xl md:text-9xl;
+  }
+  
+  /* Responsive spacing */
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Responsive grid gaps */
+  .grid-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-10;
+  }
+  
+  /* Responsive card heights */
+  .card-height-responsive {
+    @apply h-60 sm:h-70 md:h-80;
+  }
+  
+  /* Responsive padding */
+  .p-responsive {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+  
+  .px-responsive {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+  
+  .py-responsive {
+    @apply py-4 sm:py-6 md:py-8;
+  }
+  
+  /* Responsive margins */
+  .mb-responsive {
+    @apply mb-4 sm:mb-6 md:mb-8;
+  }
+  
+  .mt-responsive {
+    @apply mt-4 sm:mt-6 md:mt-8;
+  }
+  
+  /* Responsive line heights */
+  .leading-responsive {
+    @apply leading-tight sm:leading-snug md:leading-normal;
+  }
+  
+  /* Responsive font weights */
+  .font-responsive-bold {
+    @apply font-bold sm:font-extrabold md:font-black;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F18440;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A4B9B;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states */
+*:focus {
+  outline: 2px solid #F18440;
+  outline-offset: 2px;
+}
+
+/* Improved button accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #F18440;
+  outline-offset: 2px;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better mobile touch targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved mobile navigation */
+@media (max-width: 768px) {
+  .mobile-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+/* Better mobile typography */
+@media (max-width: 640px) {
+  h1 {
+    line-height: 1.1;
+  }
+  
+  h2 {
+    line-height: 1.2;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+}
+
+/* Responsive video backgrounds */
+.video-background {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
+@media (max-width: 768px) {
+  .video-background {
+    object-position: center;
+  }
+}
+
+/* Better mobile card layouts */
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Improved mobile spacing */
+@media (max-width: 640px) {
+  .mobile-spacing {
+    @apply px-4 py-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm leading-relaxed;
+  }
+  
+  .mobile-title {
+    @apply text-2xl font-bold;
+  }
+}
+
+/* Better mobile button layouts */
+@media (max-width: 640px) {
+  .mobile-buttons {
+    @apply flex-col space-y-4;
+  }
+  
+  .mobile-button {
+    @apply w-full text-center;
+  }
+}
+
+/* Responsive hero section */
+@media (max-width: 640px) {
+  .hero-content {
+    @apply px-4 py-16;
+  }
+  
+  .hero-title {
+    @apply text-3xl leading-tight;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg leading-relaxed;
+  }
+}
+
+/* Better mobile navigation */
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    @apply block;
+  }
+  
+  .desktop-nav {
+    @apply hidden;
+  }
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer-grid {
+    @apply grid-cols-1 gap-8;
+  }
+  
+  .footer-section {
+    @apply text-center;
+  }
+}
+
+/* Improved mobile modal */
+@media (max-width: 768px) {
+  .mobile-modal {
+    @apply p-4;
+  }
+  
+  .mobile-modal-content {
+    @apply max-h-[80vh] overflow-y-auto;
+  }
+}
+
+/* Better mobile gallery */
+@media (max-width: 640px) {
+  .mobile-gallery {
+    @apply grid-cols-1 gap-4;
+  }
+  
+  .mobile-gallery-item {
+    @apply h-48;
+  }
+}
+
+/* Responsive service cards */
+@media (max-width: 640px) {
+  .service-card {
+    @apply p-4;
+  }
+  
+  .service-title {
+    @apply text-xl;
+  }
+  
+  .service-description {
+    @apply text-sm;
+  }
+}
+
+/* Better mobile about page */
+@media (max-width: 640px) {
+  .about-hero {
+    @apply py-16;
+  }
+  
+  .about-title {
+    @apply text-3xl;
+  }
+  
+  .about-description {
+    @apply text-lg;
+  }
+}
+
+/* Responsive projects page */
+@media (max-width: 640px) {
+  .projects-hero {
+    @apply py-16;
+  }
+  
+  .projects-title {
+    @apply text-3xl;
+  }
+  
+  .projects-description {
+    @apply text-lg;
+  }
+  
+  .project-card {
+    @apply p-4;
+  }
+  
+  .project-title {
+    @apply text-xl;
+  }
+  
+  .project-description {
+    @apply text-sm;
+  }
+}

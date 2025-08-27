@@ -1,6 +1,20 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { 
+  Smartphone, 
+  Monitor, 
+  Palette, 
+  ArrowRight, 
+  Users, 
+  Award, 
+  Clock, 
+  Star,
+  MessageCircle,
+  ChevronUp
+} from 'lucide-react'
+import Button from '../components/Button'
+import Icon from '../components/Icon'
 
 const Home = () => {
   const containerRef = useRef(null)
@@ -29,7 +43,7 @@ const Home = () => {
     {
       title: "Marketing Digital & Gestion de réseaux sociaux",
       description: "Créons des expériences digitales qui marquent les esprits et convertissent vos visiteurs.",
-      icon: "📱",
+      icon: Smartphone,
       image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       color: "#F18440",
       features: ["Gestion réseaux sociaux", "Création de contenu vidéo", "Stratégie marketing", "Analyse de performance"]
@@ -37,7 +51,7 @@ const Home = () => {
     {
       title: "Développement Web & maintenance informatique",
       description: "Sites web performants et applications modernes avec les dernières technologies.",
-      icon: "💻",
+      icon: Monitor,
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       color: "#2A4B9B",
       features: ["Sites web modernes", "Applications web", "Maintenance système", "Support technique"]
@@ -45,7 +59,7 @@ const Home = () => {
     {
       title: "Branding & Communication visuelle",
       description: "Donnez vie à votre marque avec une identité visuelle cohérente et mémorable.",
-      icon: "🎨",
+      icon: Palette,
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       color: "#F18440",
       features: ["Identité de marque", "Supports de communication", "Impression", "Design graphique"]
@@ -61,7 +75,7 @@ const Home = () => {
       className="pt-20 relative overflow-hidden"
     >
              {/* Hero Section - Modern Design */}
-       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
+       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black py-20">
          {/* Video Background */}
          <div className="absolute inset-0 z-0">
                        <video
@@ -79,12 +93,12 @@ const Home = () => {
             <div className="absolute inset-0 bg-black/40"></div>
          </div>
 
-         {/* Geometric Background Elements */}
-         <div className="absolute inset-0 z-0">
-           <div className="absolute top-0 left-0 w-96 h-96 bg-udigit-orange opacity-20 rounded-full blur-3xl"></div>
-           <div className="absolute bottom-0 right-0 w-96 h-96 bg-udigit-blue opacity-20 rounded-full blur-3xl"></div>
-           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-udigit-orange opacity-10 rounded-full blur-2xl"></div>
-         </div>
+                   {/* Geometric Background Elements */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-udigit-orange opacity-20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-udigit-blue opacity-20 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-udigit-orange opacity-10 rounded-full blur-2xl"></div>
+          </div>
 
          {/* Grid Pattern */}
          <div className="absolute inset-0 z-0 opacity-30">
@@ -96,10 +110,10 @@ const Home = () => {
 
                    {/* Mouse Follow Effect */}
           <motion.div
-            className="fixed w-64 h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-20"
+            className="fixed w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-udigit-orange rounded-full pointer-events-none z-10 opacity-20"
             animate={{
-              x: mousePosition.x - 128,
-              y: mousePosition.y - 128,
+              x: mousePosition.x - (window.innerWidth < 640 ? 64 : window.innerWidth < 768 ? 96 : 128),
+              y: mousePosition.y - (window.innerWidth < 640 ? 64 : window.innerWidth < 768 ? 96 : 128),
             }}
             transition={{ type: "spring", stiffness: 50, damping: 20 }}
             style={{
@@ -117,25 +131,20 @@ const Home = () => {
                 className="mb-20"
               >
                 <motion.h1 
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black text-white leading-[0.9] sm:leading-[0.85] tracking-tight px-4"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white leading-[1.2] sm:leading-[1.15] md:leading-[1.1] lg:leading-[1.05] xl:leading-[1] tracking-tight px-2 sm:px-4"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1.2, delay: 0.4 }}
                 >
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <span className="text-udigit-orange">Nous créons</span>
+                  <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
+                    <span className="text-udigit-orange">Nous créons des</span>
                   </div>
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <span className="text-white">des designs</span>
+                  <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
+                    <span className="text-white">designs ambassadeurs de</span>
                   </div>
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <span className="text-udigit-blue">ambassadeurs</span>
-                  </div>
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <span className="text-white">de votre</span>
-                  </div>
-                  <div className="mb-4 sm:mb-6 md:mb-8">
-                    <span className="text-udigit-orange">marque</span>
+                  <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
+                    <span className="text-white">de </span>
+                    <span className="text-udigit-blue">votre marque</span>
                   </div>
                 </motion.h1>
               </motion.div>
@@ -144,7 +153,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 1 }}
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 sm:mb-16 md:mb-20 max-w-4xl sm:max-w-5xl mx-auto leading-relaxed font-light px-4"
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-8 sm:mb-12 md:mb-16 lg:mb-20 max-w-3xl sm:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light px-2 sm:px-4"
               >
                 Udigit est une agence créative au Burkina Faso qui allie marketing digital, design, contenu et solutions web pour donner vie à vos projets.
               </motion.p>
@@ -153,13 +162,13 @@ const Home = () => {
                initial={{ opacity: 0, y: 50 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ delay: 1.6, duration: 1 }}
-               className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-center px-4"
+               className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center items-center px-2 sm:px-4"
              >
                <motion.div
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/projects" className="inline-block bg-udigit-orange text-white text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 font-bold rounded-none border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
+                 <Link to="/projects" className="inline-block bg-udigit-orange text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-none border-2 border-udigit-orange hover:bg-transparent hover:text-udigit-orange transition-all duration-300">
                    Voir nos projets
                  </Link>
                </motion.div>
@@ -167,7 +176,7 @@ const Home = () => {
                  whileHover={{ scale: 1.05, y: -5 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 <Link to="/services" className="inline-block bg-transparent text-white text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 font-bold rounded-none border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
+                 <Link to="/services" className="inline-block bg-transparent text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-none border-2 border-white hover:bg-white hover:text-black transition-all duration-300">
                    Nos services
                  </Link>
                </motion.div>
@@ -200,9 +209,9 @@ const Home = () => {
           <section className="section-padding bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/50 relative overflow-hidden">
             {/* Liquid Glass Background Elements */}
             <div className="absolute inset-0">
-              <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/40 to-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-300/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-cyan-100/30 to-blue-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-cyan-200/40 to-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-blue-200/40 to-cyan-300/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-cyan-100/30 to-blue-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
             <div className="container-custom relative z-10">
@@ -223,19 +232,19 @@ const Home = () => {
                   <span className="text-gray-700 font-medium text-sm tracking-wider uppercase">Nos Expertises</span>
                 </motion.div>
                 
-                <h2 className="text-5xl md:text-7xl font-black text-gray-800 mb-8 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-800 mb-6 sm:mb-8 leading-tight px-2 sm:px-4">
                   <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-cyan-600 bg-clip-text text-transparent">
                     Solutions Digitales
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto font-light leading-relaxed px-2 sm:px-4">
                   Nous créons des expériences digitales exceptionnelles qui 
                   <span className="font-semibold text-gray-800"> transforment votre vision en succès</span>
                 </p>
               </motion.div>
 
               {/* Services Grid - Liquid Glass Cards */}
-              <div className="grid lg:grid-cols-3 gap-8">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2 sm:px-4">
                 {services.map((service, index) => (
                   <motion.div
                     key={service.title}
@@ -254,7 +263,7 @@ const Home = () => {
                     <div className="relative bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 overflow-hidden transform transition-all duration-500 hover:bg-white/80 hover:border-white/90 hover:shadow-2xl shadow-xl">
                       
                       {/* Top Section with Image */}
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                         <motion.img
                           src={service.image}
                           alt={service.title}
@@ -267,7 +276,7 @@ const Home = () => {
                         {/* Floating Icon - Liquid Glass */}
                         <div className="absolute top-4 left-4">
                           <div className="w-12 h-12 bg-white/80 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/60 group-hover:bg-white/90 transition-all duration-300 shadow-lg">
-                            <span className="text-xl">{service.icon}</span>
+                            <Icon icon={service.icon} size="lg" color="primary" animated />
                           </div>
                         </div>
                         
@@ -280,17 +289,17 @@ const Home = () => {
                       </div>
                       
                       {/* Content Section */}
-                      <div className="p-6">
-                        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-udigit-orange transition-colors duration-300">
+                      <div className="p-4 sm:p-6">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3 group-hover:text-udigit-orange transition-colors duration-300">
                           {service.title}
                         </h3>
                         
-                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                           {service.description}
                         </p>
                         
                         {/* Features Grid */}
-                        <div className="grid grid-cols-2 gap-3 mb-6">
+                        <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
                           {service.features.slice(0, 4).map((feature, featureIndex) => (
                             <motion.div
                               key={feature}
@@ -304,44 +313,23 @@ const Home = () => {
                                 className="w-1.5 h-1.5 rounded-full"
                                 style={{ backgroundColor: service.color }}
                               ></div>
-                              <span className="text-gray-600 text-xs font-medium">{feature}</span>
+                              <span className="text-gray-600 text-xs font-medium leading-tight">{feature}</span>
                             </motion.div>
                           ))}
                         </div>
                         
                         {/* Liquid Glass CTA Button */}
-                        <motion.div
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="relative overflow-hidden rounded-xl"
+                        <Button
+                          as={Link}
+                          to="/services"
+                          variant={index === 1 ? 'outline' : 'primary'}
+                          size="sm"
+                          icon={ArrowRight}
+                          iconPosition="right"
+                          className="w-full"
                         >
-                          <Link 
-                            to="/services"
-                            className={`block w-full text-center py-3 px-4 font-semibold text-sm transition-all duration-300 relative overflow-hidden backdrop-blur-xl border border-white/60 ${
-                              index === 0 
-                                ? 'bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white hover:from-udigit-blue hover:to-cyan-600' 
-                                : index === 1 
-                                ? 'bg-gradient-to-r from-udigit-orange/80 to-orange-500/80 text-white hover:from-udigit-orange hover:to-orange-500'
-                                : 'bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white hover:from-udigit-blue hover:to-cyan-600'
-                            }`}
-                          >
-                            <span className="relative z-10 flex items-center justify-center">
-                              <span>Explorer</span>
-                              <motion.svg 
-                                className="w-4 h-4 ml-2" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24"
-                                animate={{ x: [0, 3, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity }}
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                              </motion.svg>
-                            </span>
-                            {/* Liquid Glass Shimmer Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%]"></div>
-                          </Link>
-                        </motion.div>
+                          Explorer
+                        </Button>
                       </div>
                       
                       {/* Bottom Accent - Liquid Glass */}
@@ -360,12 +348,12 @@ const Home = () => {
         <section className="section-padding bg-gradient-to-br from-cyan-50/50 via-white to-blue-50/30 relative overflow-hidden">
           {/* Liquid Glass Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-5 sm:top-10 left-5 sm:left-10 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-5 sm:bottom-10 right-5 sm:right-10 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
 
           <div className="container-custom relative z-10">
-            <div className="grid md:grid-cols-4 gap-16 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12 lg:gap-16 text-center px-2 sm:px-4">
                             {[
                  { number: "50+", label: "Projets Réalisés", color: "#F18440" },
                  { number: "98%", label: "Clients Satisfaits", color: "#2A4B9B" },
@@ -382,28 +370,30 @@ const Home = () => {
                   className="group"
                 >
                   {/* Liquid Glass Stat Card */}
-                  <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/80">
+                  <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-4 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:bg-white/80">
                     <div 
-                      className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl border border-white/60 flex items-center justify-center shadow-lg"
+                      className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-3 sm:mb-4 md:mb-6 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl border border-white/60 flex items-center justify-center shadow-lg"
                       style={{ 
                         borderColor: stat.color,
                       }}
                     >
-                      <div 
-                        className="w-8 h-8 rounded-full"
-                        style={{ backgroundColor: stat.color }}
-                      ></div>
+                      <Icon 
+                        icon={index === 0 ? Award : index === 1 ? Users : index === 2 ? Clock : Star} 
+                        size="xl" 
+                        color="current"
+                        className="text-white"
+                      />
                     </div>
                     
                     <motion.div 
-                      className="text-5xl md:text-7xl font-black mb-4"
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-2 sm:mb-3 md:mb-4"
                       style={{ color: stat.color }}
                       whileHover={{ scale: 1.1 }}
                     >
                       {stat.number}
                     </motion.div>
                     
-                    <div className="text-lg text-gray-700 font-medium">
+                    <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 font-medium">
                       {stat.label}
                     </div>
                   </div>
@@ -417,8 +407,8 @@ const Home = () => {
         <section className="section-padding bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/50 relative overflow-hidden">
           {/* Liquid Glass Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-cyan-200/30 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-blue-200/30 to-cyan-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
 
           <motion.div
@@ -429,34 +419,31 @@ const Home = () => {
             className="container-custom text-center relative z-10"
           >
             {/* Liquid Glass CTA Card */}
-            <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-12 md:p-16 shadow-xl max-w-6xl mx-auto">
-              <h2 className="text-5xl md:text-7xl font-black text-gray-800 mb-8">
+            <div className="bg-white/60 backdrop-blur-2xl rounded-3xl border border-white/70 p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl max-w-4xl sm:max-w-5xl lg:max-w-6xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-800 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4">
                 <span className="text-udigit-orange">Prêt à transformer</span>
                 <br />
                 <span className="text-gray-800">votre vision</span>
                 <br />
                 <span className="text-udigit-blue">en réalité ?</span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto font-light">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 mb-6 sm:mb-8 md:mb-12 max-w-3xl sm:max-w-4xl mx-auto font-light px-2 sm:px-4">
                 Discutons de votre projet et découvrons comment nous pouvons 
                 vous aider à atteindre vos objectifs.
               </p>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative overflow-hidden rounded-2xl"
-              >
-                <a 
-                  href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-udigit-blue/80 to-cyan-600/80 text-white text-xl sm:text-2xl px-8 sm:px-12 md:px-16 py-6 sm:py-8 font-bold rounded-2xl border border-white/60 backdrop-blur-xl hover:from-udigit-blue hover:to-cyan-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden"
-                >
-                  <span className="relative z-10">Démarrer votre projet</span>
-                  {/* Liquid Glass Shimmer Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 translate-x-[-100%] hover:translate-x-[100%]"></div>
-                </a>
-              </motion.div>
+                             <Button
+                 as="a"
+                 href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 variant="primary"
+                 size="xl"
+                 icon={MessageCircle}
+                 iconPosition="left"
+                 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+               >
+                 Démarrer votre projet
+               </Button>
             </div>
           </motion.div>
         </section>

@@ -1,5 +1,21 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { 
+  Wrench, 
+  Monitor, 
+  Palette, 
+  TrendingUp, 
+  Search, 
+  Edit, 
+  Zap, 
+  Rocket,
+  MessageCircle,
+  ArrowRight,
+  CheckCircle,
+  Star
+} from 'lucide-react'
+import Button from '../components/Button'
+import Icon from '../components/Icon'
 
 const Services = () => {
   const containerRef = useRef(null)
@@ -25,7 +41,7 @@ const Services = () => {
       title: "Maintenance Informatique",
       description: "Services informatiques complets pour assurer le bon fonctionnement de vos équipements et systèmes.",
       features: ["Installation de système d'exploitation", "Antivirus et sécurité", "Configuration et maintenance réseaux", "Support technique", "Optimisation des performances"],
-      icon: "🔧",
+      icon: Wrench,
       color: "from-udigit-orange to-orange-500",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       gradient: "from-orange-400/20 to-red-500/20"
@@ -34,7 +50,7 @@ const Services = () => {
       title: "Développement Web",
       description: "Sites web performants et applications modernes développées avec les dernières technologies et bonnes pratiques.",
       features: ["Sites web responsives", "Applications web modernes", "E-commerce et CMS", "Optimisation SEO", "Maintenance et support"],
-      icon: "💻",
+      icon: Monitor,
       color: "from-udigit-blue to-blue-600",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       gradient: "from-blue-400/20 to-indigo-500/20"
@@ -43,7 +59,7 @@ const Services = () => {
       title: "Branding & Identité",
       description: "Développons votre identité de marque complète, de la stratégie à l'application sur tous vos supports.",
       features: ["Stratégie de marque", "Logo et identité visuelle", "Charte graphique", "Supports de communication", "Impression"],
-      icon: "✨",
+      icon: Palette,
       color: "from-purple-500 to-pink-500",
       image: "https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       gradient: "from-purple-400/20 to-pink-500/20"
@@ -52,7 +68,7 @@ const Services = () => {
       title: "Marketing Digital",
       description: "Stratégies marketing digital complètes pour augmenter votre visibilité et générer des leads qualifiés.",
       features: ["Stratégie marketing", "Campagnes publicitaires", "Gestion des réseaux sociaux", "Création de contenu vidéos", "Analytics et reporting"],
-      icon: "📈",
+      icon: TrendingUp,
       color: "from-green-500 to-teal-500",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       gradient: "from-green-400/20 to-teal-500/20"
@@ -64,25 +80,25 @@ const Services = () => {
       step: "01",
       title: "Découverte",
       description: "Nous analysons vos besoins, objectifs et votre marché pour définir la meilleure stratégie.",
-      icon: "🔍"
+      icon: Search
     },
     {
       step: "02", 
       title: "Conception",
       description: "Nous créons des concepts créatifs et des maquettes qui répondent à vos objectifs.",
-      icon: "✏️"
+      icon: Edit
     },
     {
       step: "03",
       title: "Développement", 
       description: "Nous développons votre projet avec les meilleures technologies et pratiques.",
-      icon: "⚡"
+      icon: Zap
     },
     {
       step: "04",
       title: "Lancement",
       description: "Nous testons, optimisons et lançons votre projet avec un support continu.",
-      icon: "🚀"
+      icon: Rocket
     }
   ]
 
@@ -231,19 +247,12 @@ const Services = () => {
                        
                                                {/* Icon principal */}
                                                  <div className={`relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r ${service.color} rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-2xl border-2 border-white/20`}>
-                         <motion.span
-                           animate={{ 
-                             y: [0, -5, 0],
-                             rotate: [0, 5, 0]
-                           }}
-                           transition={{ 
-                             duration: 3,
-                             repeat: Infinity,
-                             ease: "easeInOut"
-                           }}
-                         >
-                           {service.icon}
-                         </motion.span>
+                         <Icon 
+                           icon={service.icon} 
+                           size="xl" 
+                           color="white" 
+                           animated 
+                         />
                        </div>
                        
                        {/* Particules flottantes */}
@@ -279,7 +288,7 @@ const Services = () => {
                      
                                            {/* Titre avec effet de révélation */}
                       <motion.h3 
-                        className="text-2xl md:text-3xl font-black text-black mb-4 md:mb-6 text-center"
+                        className="text-xl sm:text-2xl md:text-3xl font-black text-black mb-4 md:mb-6 text-center px-2"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -292,7 +301,7 @@ const Services = () => {
                      
                                            {/* Description avec animation de texte */}
                       <motion.p 
-                        className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base text-center"
+                        className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base text-center px-2"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -304,7 +313,7 @@ const Services = () => {
                                            {/* Features compactes avec effet de survol */}
                       <div className="relative">
                         {/* Affichage principal - 3 points clés */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-6 px-2">
                           {service.features.slice(0, 3).map((feature, featureIndex) => (
                             <motion.div
                               key={feature}
@@ -486,7 +495,9 @@ const Services = () => {
                    />
                  </motion.div>
                 
-                <div className="text-4xl mb-4">{step.icon}</div>
+                <div className="mb-4">
+                  <Icon icon={step.icon} size="2xl" color="primary" animated />
+                </div>
                 
                                  <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-udigit-orange transition-colors">
                    {step.title}
@@ -561,20 +572,19 @@ const Services = () => {
             Discutons de vos besoins et découvrons comment nous pouvons 
             vous aider à atteindre vos objectifs.
           </p>
-          <motion.a
+          <Button
+            as="a"
             href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20demander%20un%20devis%20pour%20mes%20besoins%20digitaux%20avec%20votre%20agence%20Udigit."
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ 
-              scale: 1.05, 
-              y: -5,
-              boxShadow: "0 25px 50px rgba(0,0,0,0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-                         className="bg-white/90 backdrop-blur-xl text-udigit-orange font-bold py-4 sm:py-6 px-8 sm:px-12 rounded-xl sm:rounded-2xl text-lg sm:text-xl hover:bg-white transition-all duration-300 shadow-2xl border border-white/60 inline-block cursor-pointer"
+            variant="secondary"
+            size="xl"
+            icon={MessageCircle}
+            iconPosition="left"
+            className="text-lg sm:text-xl"
           >
             Demander un devis
-          </motion.a>
+          </Button>
         </motion.div>
       </section>
     </motion.div>

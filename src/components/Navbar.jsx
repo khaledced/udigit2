@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, MessageCircle, Home, Briefcase, Users, FolderOpen } from 'lucide-react'
+import Button from './Button'
+import Icon from './Icon'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,10 +19,10 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    { name: 'Accueil', path: '/' },
-    { name: 'Nos Services', path: '/services' },
-    { name: 'À Propos', path: '/about' },
-    { name: 'Projets', path: '/projects' },
+    { name: 'Accueil', path: '/', icon: Home },
+    { name: 'Nos Services', path: '/services', icon: Briefcase },
+    { name: 'À Propos', path: '/about', icon: Users },
+    { name: 'Projets', path: '/projects', icon: FolderOpen },
   ]
 
   const navbarVariants = {
@@ -56,7 +59,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container-custom px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -65,7 +68,7 @@ const Navbar = () => {
             <img 
               src="/images/Plan de travail 45.svg" 
               alt="Udigit Logo" 
-              className="h-32 w-auto"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto"
             />
           </motion.div>
 
@@ -100,42 +103,30 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block"
-          >
-            <a
+          <div className="hidden md:block">
+            <Button
+              as="a"
               href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20suis%20intéressé%20par%20vos%20services%20digitaux."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-udigit-blue text-white px-8 py-4 font-bold rounded-2xl border-2 border-transparent hover:bg-transparent hover:text-udigit-blue hover:border-udigit-blue transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              variant="primary"
+              size="lg"
+              icon={MessageCircle}
+              iconPosition="left"
             >
               Contact
-            </a>
-          </motion.div>
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors bg-white/80 backdrop-blur-sm border border-gray-200"
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <motion.span
-                animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-gray-900 block transition-all duration-300 shadow-sm"
-              />
-              <motion.span
-                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-6 h-0.5 bg-gray-900 block mt-1 transition-all duration-300 shadow-sm"
-              />
-              <motion.span
-                animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-gray-900 block mt-1 transition-all duration-300 shadow-sm"
-              />
-            </div>
-          </motion.button>
+            className="md:hidden bg-white/80 backdrop-blur-sm border border-gray-200"
+            icon={isOpen ? X : Menu}
+            iconPosition="right"
+          />
         </div>
 
         {/* Mobile Menu */}
@@ -159,13 +150,14 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       onClick={() => setIsOpen(false)}
-                      className={`block text-lg font-medium transition-colors duration-300 ${
+                      className={`flex items-center space-x-3 text-lg font-medium transition-colors duration-300 ${
                         location.pathname === item.path
                           ? 'text-udigit-orange'
                           : 'text-gray-700 hover:text-udigit-orange'
                       }`}
                     >
-                      {item.name}
+                      <Icon icon={item.icon} size="sm" color={location.pathname === item.path ? 'secondary' : 'gray'} />
+                      <span>{item.name}</span>
                     </Link>
                   </motion.div>
                 ))}
@@ -175,15 +167,20 @@ const Navbar = () => {
                   transition={{ delay: 0.2 }}
                   className="pt-4"
                 >
-                  <a
+                  <Button
+                    as="a"
                     href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20suis%20intéressé%20par%20vos%20services%20digitaux."
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="w-full bg-udigit-blue text-white py-4 px-6 font-bold rounded-2xl text-center block hover:bg-udigit-blue/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    variant="primary"
+                    size="lg"
+                    icon={MessageCircle}
+                    iconPosition="left"
+                    className="w-full"
                   >
                     Contact
-                  </a>
+                  </Button>
                 </motion.div>
               </div>
             </motion.div>
