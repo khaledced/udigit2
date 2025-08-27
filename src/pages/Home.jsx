@@ -42,27 +42,21 @@ const Home = () => {
   const services = [
     {
       title: "Marketing Digital & Gestion de réseaux sociaux",
-      description: "Créons des expériences digitales qui marquent les esprits et convertissent vos visiteurs.",
       icon: Smartphone,
       image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#F18440",
-      features: ["Gestion réseaux sociaux", "Création de contenu vidéo", "Stratégie marketing", "Analyse de performance"]
+      color: "#F18440"
     },
     {
       title: "Développement Web & maintenance informatique",
-      description: "Sites web performants et applications modernes avec les dernières technologies.",
       icon: Monitor,
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#2A4B9B",
-      features: ["Sites web modernes", "Applications web", "Maintenance système", "Support technique"]
+      color: "#2A4B9B"
     },
     {
       title: "Branding & Communication visuelle",
-      description: "Donnez vie à votre marque avec une identité visuelle cohérente et mémorable.",
       icon: Palette,
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      color: "#F18440",
-      features: ["Identité de marque", "Supports de communication", "Impression", "Design graphique"]
+      color: "#F18440"
     }
   ]
 
@@ -75,7 +69,7 @@ const Home = () => {
       className="pt-20 relative overflow-hidden"
     >
              {/* Hero Section - Modern Design */}
-       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black py-20">
+       <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black py-8 sm:py-12 md:py-16 lg:py-20">
          {/* Video Background */}
          <div className="absolute inset-0 z-0">
                        <video
@@ -128,10 +122,10 @@ const Home = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="mb-20"
+                className="mb-12 sm:mb-16 md:mb-20 lg:mb-24"
               >
                 <motion.h1 
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white leading-[1.2] sm:leading-[1.15] md:leading-[1.1] lg:leading-[1.05] xl:leading-[1] tracking-tight px-2 sm:px-4"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black text-white leading-[1.1] sm:leading-[1.05] md:leading-[1] lg:leading-[0.95] xl:leading-[0.9] tracking-tight px-2 sm:px-4"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1.2, delay: 0.4 }}
@@ -288,49 +282,27 @@ const Home = () => {
                         </div>
                       </div>
                       
-                      {/* Content Section */}
-                      <div className="p-4 sm:p-6">
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3 group-hover:text-udigit-orange transition-colors duration-300">
-                          {service.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-                          {service.description}
-                        </p>
-                        
-                        {/* Features Grid */}
-                        <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
-                          {service.features.slice(0, 4).map((feature, featureIndex) => (
-                            <motion.div
-                              key={feature}
-                              initial={{ opacity: 0, x: -10 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
-                              viewport={{ once: true }}
-                              className="flex items-center space-x-2"
-                            >
-                              <div 
-                                className="w-1.5 h-1.5 rounded-full"
-                                style={{ backgroundColor: service.color }}
-                              ></div>
-                              <span className="text-gray-600 text-xs font-medium leading-tight">{feature}</span>
-                            </motion.div>
-                          ))}
-                        </div>
-                        
-                        {/* Liquid Glass CTA Button */}
-                        <Button
-                          as={Link}
-                          to="/services"
-                          variant={index === 1 ? 'outline' : 'primary'}
-                          size="sm"
-                          icon={ArrowRight}
-                          iconPosition="right"
-                          className="w-full"
-                        >
-                          Explorer
-                        </Button>
-                      </div>
+                                             {/* Content Section */}
+                       <div className="p-4 sm:p-6">
+                         <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-4 sm:mb-6 group-hover:text-udigit-orange transition-colors duration-300">
+                           {service.title}
+                         </h3>
+                         
+                                                   {/* Liquid Glass CTA Button */}
+                          <Link 
+                            to="/services"
+                            className={`inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold rounded-lg transition-all duration-300 ${
+                              index === 0 
+                                ? 'bg-udigit-orange text-white hover:bg-udigit-orange/90 border-2 border-udigit-orange' 
+                                : index === 1 
+                                ? 'bg-transparent text-udigit-blue hover:bg-udigit-blue hover:text-white border-2 border-udigit-blue' 
+                                : 'bg-udigit-orange text-white hover:bg-udigit-orange/90 border-2 border-udigit-orange'
+                            }`}
+                          >
+                            Explorer
+                            <ArrowRight className="ml-2 w-4 h-4" />
+                          </Link>
+                       </div>
                       
                       {/* Bottom Accent - Liquid Glass */}
                       <div 
@@ -431,19 +403,15 @@ const Home = () => {
                 Discutons de votre projet et découvrons comment nous pouvons 
                 vous aider à atteindre vos objectifs.
               </p>
-                             <Button
-                 as="a"
+                             <a
                  href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20démarrer%20mon%20projet%20avec%20votre%20agence%20Udigit."
                  target="_blank"
                  rel="noopener noreferrer"
-                 variant="primary"
-                 size="xl"
-                 icon={MessageCircle}
-                 iconPosition="left"
-                 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-udigit-orange hover:bg-udigit-orange/90 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                >
+                 <MessageCircle className="mr-3 w-6 h-6" />
                  Démarrer votre projet
-               </Button>
+               </a>
             </div>
           </motion.div>
         </section>

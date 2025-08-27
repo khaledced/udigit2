@@ -80,7 +80,7 @@ const Projects = () => {
       description: "Série de contenus pour l'ouverture d'un nouveau restaurant.",
       image: "/images/melina.jpg",
       platform: "Instagram",
-      driveLink: "https://drive.google.com/file/d/1fUSprHJ9IhyhIQFoA3r27SOYaN0kacNb/view?usp=drivesdk" // Remplacez par votre lien Google Drive
+      youtubeLink: "https://www.youtube.com/shorts/2vtoRiKiCPY" // Lien de test temporaire
     },
     {
       id: 2,
@@ -88,7 +88,7 @@ const Projects = () => {
       description: "Contenu vidéo virale pour la promotion d'un espace de détente.",
       image: "/images/lagon.jpg",
       platform: "TikTok",
-      driveLink: "https://drive.google.com/file/d/1-1UA_PoexmdB7k9Y4UY4oqpRT3GIXkp3/view?usp=drivesdk" // Remplacez par votre lien Google Drive
+      youtubeLink: "https://youtube.com/shorts/geLfGMCugsM?si=ivqNMlBSsYryRk0h" // Remplacez par votre lien YouTube
     },
     {
       id: 3,
@@ -96,7 +96,7 @@ const Projects = () => {
       description: "Vidéos professionnelles pour la promotion d'un espace piscine-lounche-bar",
       image: "/images/espace.jpg",
       platform: "Facebook",
-      driveLink: "https://drive.google.com/file/d/1-1kXGF64GxFdt_ek_3Erd9uW-TdtqOxE/view?usp=drivesdk" // Remplacez par votre lien Google Drive
+      youtubeLink: "https://youtube.com/shorts/2vtoRiKiCPY?si=ZaYREFXEiDhen_vd" // Remplacez par votre lien YouTube
     }
   ]
 
@@ -396,16 +396,13 @@ const Projects = () => {
                       whileHover={{ opacity: 1, scale: 1 }}
                       className="absolute inset-0 bg-gradient-to-t from-udigit-orange/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
-                      <Button
-                        onClick={() => setSelectedGallery(project)}
-                        variant="secondary"
-                        size="md"
-                        icon={Eye}
-                        iconPosition="left"
-                        className="bg-black/50 backdrop-blur-sm"
-                      >
-                        Voir le projet
-                      </Button>
+                                             <button
+                         onClick={() => setSelectedGallery(project)}
+                         className="inline-flex items-center justify-center px-4 py-2 bg-black/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-black/70 transition-all duration-300"
+                       >
+                         <Eye className="w-4 h-4 mr-2" />
+                         Voir le projet
+                       </button>
                     </motion.div>
                   </div>
                   
@@ -416,17 +413,14 @@ const Projects = () => {
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light mb-4 sm:mb-6">
                       {project.description}
                     </p>
-                    {/* Bouton mobile pour meilleure accessibilité */}
-                    <Button
-                      onClick={() => setSelectedGallery(project)}
-                      variant="primary"
-                      size="md"
-                      icon={Eye}
-                      iconPosition="left"
-                      className="w-full md:hidden"
-                    >
-                      Voir le projet
-                    </Button>
+                                         {/* Bouton mobile pour meilleure accessibilité */}
+                     <button
+                       onClick={() => setSelectedGallery(project)}
+                       className="w-full md:hidden inline-flex items-center justify-center px-4 py-2 bg-udigit-orange text-white font-semibold rounded-lg hover:bg-udigit-orange/90 transition-all duration-300"
+                     >
+                       <Eye className="w-4 h-4 mr-2" />
+                       Voir le projet
+                     </button>
                   </div>
                 </div>
               </motion.div>
@@ -513,19 +507,15 @@ const Projects = () => {
                       whileHover={{ opacity: 1, scale: 1 }}
                       className="absolute inset-0 bg-gradient-to-t from-udigit-blue/80 to-transparent flex items-end justify-center pb-8 opacity-100 transition-opacity duration-300"
                     >
-                      <Button
-                        as="a"
-                        href={project.driveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variant="secondary"
-                        size="md"
-                        icon={ExternalLink}
-                        iconPosition="left"
-                        className="bg-black/50 backdrop-blur-sm"
-                      >
-                        Voir le contenu
-                      </Button>
+                                             <a
+                         href={project.youtubeLink}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className="inline-flex items-center justify-center px-4 py-2 bg-black/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-black/70 transition-all duration-300"
+                       >
+                         <ExternalLink className="w-4 h-4 mr-2" />
+                         Voir le contenu
+                       </a>
                     </motion.div>
                   </div>
                   
@@ -536,20 +526,16 @@ const Projects = () => {
                     <p className="text-gray-600 leading-relaxed font-light mb-6">
                       {project.description}
                     </p>
-                    {/* Bouton mobile pour meilleure accessibilité */}
-                    <Button
-                      as="a"
-                      href={project.driveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="primary"
-                      size="md"
-                      icon={ExternalLink}
-                      iconPosition="left"
-                      className="w-full md:hidden"
-                    >
-                      Voir le contenu
-                    </Button>
+                                         {/* Bouton mobile pour meilleure accessibilité */}
+                     <a
+                       href={project.youtubeLink}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="w-full md:hidden inline-flex items-center justify-center px-4 py-2 bg-udigit-blue text-white font-semibold rounded-lg hover:bg-udigit-blue/90 transition-all duration-300"
+                     >
+                       <ExternalLink className="w-4 h-4 mr-2" />
+                       Voir le contenu
+                     </a>
                   </div>
                 </div>
               </motion.div>
@@ -869,15 +855,13 @@ const Projects = () => {
                   <span className="text-gray-600 font-medium">
                     {selectedGallery.gallery.length} images dans cette galerie
                   </span>
-                  <Button
-                    onClick={() => setSelectedGallery(null)}
-                    variant="primary"
-                    size="md"
-                    icon={X}
-                    iconPosition="left"
-                  >
-                    Fermer
-                  </Button>
+                                     <button
+                     onClick={() => setSelectedGallery(null)}
+                     className="inline-flex items-center justify-center px-4 py-2 bg-udigit-orange text-white font-semibold rounded-lg hover:bg-udigit-orange/90 transition-all duration-300"
+                   >
+                     <X className="w-4 h-4 mr-2" />
+                     Fermer
+                   </button>
                 </div>
               </div>
             </motion.div>
@@ -902,14 +886,13 @@ const Projects = () => {
                className="relative max-w-7xl w-full max-h-[95vh] overflow-hidden"
                onClick={(e) => e.stopPropagation()}
              >
-               {/* Close Button */}
-               <Button
-                 onClick={() => setSelectedImage(null)}
-                 variant="ghost"
-                 size="sm"
-                 icon={X}
-                 className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30"
-               />
+                               {/* Close Button */}
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 flex items-center justify-center transition-all duration-300"
+                >
+                  <X className="w-6 h-6 text-white" />
+                </button>
 
                {/* Image */}
                <motion.img

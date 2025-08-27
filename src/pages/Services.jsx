@@ -572,19 +572,15 @@ const Services = () => {
             Discutons de vos besoins et découvrons comment nous pouvons 
             vous aider à atteindre vos objectifs.
           </p>
-          <Button
-            as="a"
+          <a
             href="https://wa.me/22671784721?text=Bonjour%20!%20Je%20souhaite%20demander%20un%20devis%20pour%20mes%20besoins%20digitaux%20avec%20votre%20agence%20Udigit."
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
-            size="xl"
-            icon={MessageCircle}
-            iconPosition="left"
-            className="text-lg sm:text-xl"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-udigit-orange bg-white hover:bg-gray-50 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-white"
           >
+            <MessageCircle className="mr-3 w-6 h-6" />
             Demander un devis
-          </Button>
+          </a>
         </motion.div>
       </section>
     </motion.div>

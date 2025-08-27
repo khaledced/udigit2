@@ -28,7 +28,7 @@ const About = () => {
   const socialNetworks = [
     {
       name: "Facebook",
-      url: "https://www.facebook.com/share/15cjh47N3q/?mibextid=wwXIfr",
+      url: "https://www.facebook.com/profile.php?id=100086151861395",
       icon: Facebook,
       color: "from-blue-500 to-blue-600",
       description: "Suivez-nous pour nos dernières actualités et projets",
@@ -37,7 +37,7 @@ const About = () => {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/udigit__?igsh=MXhqcXNqeDkxdTUxZw==",
+      url: "https://www.instagram.com/udigit__/",
       icon: Instagram,
       color: "from-purple-500 to-pink-500",
       description: "Découvrez nos créations visuelles et notre univers créatif",
@@ -45,7 +45,7 @@ const About = () => {
     },
     {
       name: "TikTok",
-      url: "https://www.tiktok.com/@udigit_?_t=ZM-8zCAGyKJyWk&_r=1",
+      url: "https://www.tiktok.com/@udigit_",
       icon: () => (
         <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
@@ -213,11 +213,11 @@ const About = () => {
                 >
                   🎯
                 </motion.div>
-                <h3 className="text-3xl font-bold mb-6">Notre Mission</h3>
-                <p className="text-xl leading-relaxed">
-                  Transformer les idées en expériences digitales exceptionnelles 
-                  qui inspirent, engagent et convertissent.
-                </p>
+                                 <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Notre Mission</h3>
+                 <p className="text-base sm:text-lg md:text-xl leading-relaxed text-justify">
+                   Transformer les idées en expériences digitales exceptionnelles 
+                   qui inspirent, engagent et convertissent.
+                 </p>
               </motion.div>
             </motion.div>
           </div>
@@ -345,18 +345,15 @@ const About = () => {
                      {network.description}
                    </p>
                    
-                   {/* Follow Button - Only this is clickable */}
-                   <Button
-                     as="a"
-                     href={network.url} 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     variant="primary"
-                     size="md"
-                     className="w-full"
-                   >
-                     Suivre
-                   </Button>
+                                       {/* Follow Button - Only this is clickable */}
+                    <a
+                      href={network.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-udigit-blue to-cyan-500 text-white font-semibold rounded-lg hover:from-udigit-blue/90 hover:to-cyan-500/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      Suivre
+                    </a>
                  </div>
                </motion.div>
              ))}
