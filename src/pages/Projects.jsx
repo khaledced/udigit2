@@ -96,7 +96,7 @@ const Projects = () => {
       description: "Vidéos professionnelles pour la promotion d'un espace piscine-lounche-bar",
       image: "/images/espace.jpg",
       platform: "Facebook",
-      youtubeLink: "https://youtube.com/shorts/2vtoRiKiCPY?si=ZaYREFXEiDhen_vd" // Remplacez par votre lien YouTube
+      youtubeLink: "https://youtube.com/shorts/9nVjaUPPGgI?si=6w-af02Xu8OAdEWI" // Remplacez par votre lien YouTube
     }
   ]
 
@@ -104,12 +104,12 @@ const Projects = () => {
   const websites = [
     {
       id: 1,
-      title: "Site Udigit - En Développement",
+      title: "Site Udigit",
       description: "Site web moderne et professionnel pour notre agence Udigit, conçu avec les dernières technologies web.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       link: "#",
       technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-      inProgress: true
+      inProgress: false
     }
   ]
 

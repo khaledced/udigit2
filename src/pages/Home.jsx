@@ -11,7 +11,11 @@ import {
   Clock, 
   Star,
   MessageCircle,
-  ChevronUp
+  ChevronUp,
+  FolderOpen,
+  Heart,
+  Calendar,
+  Headphones
 } from 'lucide-react'
 import Button from '../components/Button'
 import Icon from '../components/Icon'
@@ -349,12 +353,15 @@ const Home = () => {
                         borderColor: stat.color,
                       }}
                     >
-                      <Icon 
-                        icon={index === 0 ? Award : index === 1 ? Users : index === 2 ? Clock : Star} 
-                        size="xl" 
-                        color="current"
-                        className="text-white"
-                      />
+                      {index === 0 ? (
+                        <FolderOpen className="w-full h-full text-white" />
+                      ) : index === 1 ? (
+                        <Heart className="w-full h-full text-white" />
+                      ) : index === 2 ? (
+                        <Calendar className="w-full h-full text-white" />
+                      ) : (
+                        <Headphones className="w-full h-full text-white" />
+                      )}
                     </div>
                     
                     <motion.div 
