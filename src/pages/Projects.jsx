@@ -35,39 +35,39 @@ const Projects = () => {
       id: 1,
       title: "Identités Visuelles",
       description: "Création complète d'identités de marque : logos, chartes graphiques, supports de communication et guidelines.",
-      image: "./images/visual.png",
+      image: "/images/visual.png",
       category: "Branding",
       gallery: [
-        "./images/f1.jpeg",
-        "./images/f2.jpg",
-        "./images/f3.png",
-        "./images/f4.png",
+        "/images/f1.jpeg",
+        "/images/f2.jpg",
+        "/images/f3.png",
+        "/images/f4.png",
       ]
     },
     {
       id: 2,
       title: "Packaging et Illustrations",
       description: "Design d'emballages créatifs et illustrations personnalisées pour valoriser vos produits.",
-      image: "./images/illus.jpg",
+      image: "/images/illus.jpg",
       category: "Packaging",
              gallery: [
-         "./images/55.png",
-         "./images/4278766.png",
-         "./images/asi1.jpg",
-         "./images/mannequin.png",
+         "/images/55.png",
+         "/images/4278766.png",
+         "/images/asi1.jpg",
+         "/images/mannequin.png",
        ]
     },
     {
       id: 3,
       title: "Affiches Événementielles",
       description: "Création d'affiches impactantes et supports visuels pour vos événements et campagnes.",
-      image: "./images/16.png",
+      image: "/images/16.png",
       category: "Print",
       gallery: [
-        "./images/8.png",
-        "./images/11.png",
-        "./images/6.png",
-        "./images/9.png"
+        "/images/8.png",
+        "/images/11.png",
+        "/images/6.png",
+        "/images/9.png"
       ]
     }
   ]
@@ -78,7 +78,7 @@ const Projects = () => {
       id: 1,
       title: "Contenu promotionnel pour un restaurant",
       description: "Série de contenus pour l'ouverture d'un nouveau restaurant.",
-      image: "./images/melina.jpg",
+      image: "/images/melina.jpg",
       platform: "Instagram",
       youtubeLink: "https://www.youtube.com/shorts/2vtoRiKiCPY" // Lien de test temporaire
     },
@@ -86,7 +86,7 @@ const Projects = () => {
       id: 2,
       title: "Vidéo virale pour un espace détente",
       description: "Contenu vidéo virale pour la promotion d'un espace de détente.",
-      image: "./images/lagon.jpg",
+      image: "/images/lagon.jpg",
       platform: "TikTok",
       youtubeLink: "https://youtube.com/shorts/geLfGMCugsM?si=ivqNMlBSsYryRk0h" // Remplacez par votre lien YouTube
     },
@@ -94,7 +94,7 @@ const Projects = () => {
       id: 3,
       title: "Tournage de vidéos pour un espace piscine-lounche-bar",
       description: "Vidéos professionnelles pour la promotion d'un espace piscine-lounche-bar",
-      image: "./images/espace.jpg",
+      image: "/images/espace.jpg",
       platform: "Facebook",
       youtubeLink: "https://youtube.com/shorts/9nVjaUPPGgI?si=6w-af02Xu8OAdEWI" // Remplacez par votre lien YouTube
     }
@@ -120,62 +120,62 @@ const Projects = () => {
     {
       id: 1,
       name: "Client 1",
-      logo: "./images/client1.png" // Remplacez par votre logo
+      logo: "/images/client1.png" // Remplacez par votre logo
     },
     {
       id: 2,
       name: "Client 2", 
-      logo: "./images/client2.png" // Remplacez par votre logo
+      logo: "/images/client2.png" // Remplacez par votre logo
     },
     {
       id: 3,
       name: "Client 3",
-      logo: "./images/client3.png" // Remplacez par votre logo
+      logo: "/images/client3.png" // Remplacez par votre logo
     },
     {
       id: 4,
       name: "Client 4",
-      logo: "./images/client4.png" // Remplacez par votre logo
+      logo: "/images/client4.png" // Remplacez par votre logo
     },
     {
       id: 5,
       name: "Client 5",
-      logo: "./images/client5.png" // Remplacez par votre logo
+      logo: "/images/client5.png" // Remplacez par votre logo
     },
     {
       id: 6,
       name: "Client 6",
-      logo: "./images/client6.png" // Remplacez par votre logo
+      logo: "/images/client6.png" // Remplacez par votre logo
     },
     {
       id: 7,
       name: "Client 7",
-      logo: "./images/client7.png" // Remplacez par votre logo
+      logo: "/images/client7.png" // Remplacez par votre logo
     },
     {
       id: 8,
       name: "Client 8",
-      logo: "./images/client8.png" // Remplacez par votre logo
+      logo: "/images/client8.png" // Remplacez par votre logo
     },
     {
       id: 9,
       name: "Client 9",
-      logo: "./images/client9.png" // Remplacez par votre logo
+      logo: "/images/client9.png" // Remplacez par votre logo
     },
     {
       id: 10,
       name: "Client 10",
-      logo: "./images/client10.png" // Remplacez par votre logo
+      logo: "/images/client10.png" // Remplacez par votre logo
     },
     {
       id: 11,
       name: "Client 11",
-      logo: "./images/client11.png" // Remplacez par votre logo
+      logo: "/images/client11.png" // Remplacez par votre logo
     },
     {
       id: 12,
       name: "Client 12",
-      logo: "./images/client12.png" // Remplacez par votre logo
+      logo: "/images/client12.png" // Remplacez par votre logo
     }
   ]
 
