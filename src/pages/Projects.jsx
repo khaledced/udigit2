@@ -135,47 +135,47 @@ const Projects = () => {
     {
       id: 4,
       name: "Client 4",
-      logo: "/images/client4.png" // Remplacez par votre logo
+      logo: "./images/client4.png" // Remplacez par votre logo
     },
     {
       id: 5,
       name: "Client 5",
-      logo: "/images/client5.png" // Remplacez par votre logo
+      logo: "./images/client5.png" // Remplacez par votre logo
     },
     {
       id: 6,
       name: "Client 6",
-      logo: "/images/client6.png" // Remplacez par votre logo
+      logo: "./images/client6.png" // Remplacez par votre logo
     },
     {
       id: 7,
       name: "Client 7",
-      logo: "/images/client7.png" // Remplacez par votre logo
+      logo: "./images/client7.png" // Remplacez par votre logo
     },
     {
       id: 8,
       name: "Client 8",
-      logo: "/images/client8.png" // Remplacez par votre logo
+      logo: "./images/client8.png" // Remplacez par votre logo
     },
     {
       id: 9,
       name: "Client 9",
-      logo: "/images/client9.png" // Remplacez par votre logo
+      logo: "./images/client9.png" // Remplacez par votre logo
     },
     {
       id: 10,
       name: "Client 10",
-      logo: "/images/client10.png" // Remplacez par votre logo
+      logo: "./images/client10.png" // Remplacez par votre logo
     },
     {
       id: 11,
       name: "Client 11",
-      logo: "/images/client11.png" // Remplacez par votre logo
+      logo: "./images/client11.png" // Remplacez par votre logo
     },
     {
       id: 12,
       name: "Client 12",
-      logo: "/images/client12.png" // Remplacez par votre logo
+      logo: "./images/client12.png" // Remplacez par votre logo
     }
   ]
 
