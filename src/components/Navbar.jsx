@@ -66,7 +66,7 @@ const Navbar = () => {
             className="flex items-center"
           >
             <img 
-              src="/images/Plan de travail 45.svg" 
+                              src="./images/Plan de travail 45.svg" 
               alt="Udigit Logo" 
               className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto"
             />

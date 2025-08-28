@@ -54,7 +54,7 @@ const Footer = () => {
           >
                          <div className="flex items-center space-x-3 mb-6">
                <img 
-                 src="/images/udi.png" 
+                 src="./images/udi.png" 
                  alt="Udigit Logo" 
                  className="w-16 h-16 object-contain scale-150"
                />
