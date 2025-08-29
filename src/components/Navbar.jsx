@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, MessageCircle, Home, Briefcase, Users, FolderOpen } from 'lucide-react'
+import { Menu, X, MessageCircle, Home, Briefcase, Users, FolderOpen, FileText } from 'lucide-react'
 import Button from './Button'
 import Icon from './Icon'
 
@@ -23,6 +23,7 @@ const Navbar = () => {
     { name: 'Nos Services', path: '/services', icon: Briefcase },
     { name: 'À Propos', path: '/about', icon: Users },
     { name: 'Projets', path: '/projects', icon: FolderOpen },
+    { name: 'Blog', path: '/blog', icon: FileText },
   ]
 
   const navbarVariants = {

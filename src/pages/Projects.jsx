@@ -235,7 +235,7 @@ const Projects = () => {
                animate={{ opacity: 1, scale: 1 }}
                transition={{ duration: 1.2, delay: 0.5 }}
              >
-               Nos <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-udigit-orange bg-clip-text text-transparent">Créations</span>
+               Nos <span className="bg-gradient-to-r from-udigit-orange via-udigit-blue to-cyan-600 bg-clip-text text-transparent">Créations</span>
              </motion.h1>
             
             <motion.p 

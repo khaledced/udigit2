@@ -178,6 +178,32 @@ const Home = () => {
                    Nos services
                  </Link>
                </motion.div>
+               <motion.div
+                 whileHover={{ scale: 1.05, y: -5 }}
+                 whileTap={{ scale: 0.95 }}
+                 className="hidden md:block"
+               >
+                                   <Link to="/blog" className="inline-block bg-gradient-to-r from-udigit-blue to-cyan-500 text-white text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 font-bold rounded-full border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300">
+                   Blog
+                 </Link>
+               </motion.div>
+             </motion.div>
+             
+             {/* Blog Button for Mobile */}
+             <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 2.0, duration: 1 }}
+               className="flex justify-center mt-4 md:hidden px-2 sm:px-4"
+             >
+               <motion.div
+                 whileHover={{ scale: 1.05, y: -5 }}
+                 whileTap={{ scale: 0.95 }}
+               >
+                                   <Link to="/blog" className="inline-block bg-gradient-to-r from-udigit-blue to-cyan-500 text-white text-sm px-6 py-3 font-bold rounded-full border-2 border-udigit-blue hover:bg-transparent hover:text-udigit-blue transition-all duration-300">
+                   Blog
+                 </Link>
+               </motion.div>
              </motion.div>
            </div>
          </div>
