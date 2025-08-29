@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://[votre-username].github.io/udigit2",
+  "homepage": "https://khaledced.github.io/udigit2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
