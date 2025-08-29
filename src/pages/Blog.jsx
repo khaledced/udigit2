@@ -12,6 +12,11 @@ import {
 import { useState } from 'react'
 import BlogArticle from '../components/BlogArticle'
 
+// Import des images
+import udiImg from '/images/udi.png'
+import melinaImg from '/images/melina.jpg'
+import collaborationImg from '/images/collaboration.jpg'
+
 const Blog = () => {
   const containerRef = useRef(null)
   
@@ -29,7 +34,7 @@ const Blog = () => {
       title: "Comment Olivier SAWADOGO intègre le digital dans sa routine entrepreneuriale.",
       excerpt: "Découvrez les startups innovantes dirigées par de jeunes entrepreneurs burkinabés qui révolutionnent leur secteur d'activité.",
       content: "Le Burkina Faso regorge de talents et d'innovations. Découvrez comment ces jeunes entrepreneurs créent des solutions locales pour des défis locaux et internationaux.",
-      image: "/images/black.jpg",
+      image: udiImg,
       author: "Équipe Udigit",
       date: "28 Aout 2025",
       readTime: "8 min",
@@ -68,7 +73,7 @@ const Blog = () => {
        title: "Comment les réseaux sociaux boostent la communication des entreprises",
        excerpt: "Découvrez comment les réseaux sociaux révolutionnent la communication d'entreprise et stimulent la croissance commerciale.",
        content: "Les réseaux sociaux ne sont plus seulement des outils de divertissement. Ils sont devenus des leviers puissants pour la communication et le développement commercial.",
-              image: "/images/front-view-man-looking-away.jpg",
+              image: melinaImg,
        author: "Équipe Udigit",
        date: "27 août 2025",
        readTime: "12 min",
@@ -80,7 +85,7 @@ const Blog = () => {
              title: "Comment se créer une e-réputation de confiance, astuces",
        excerpt: "Découvrez des astuces simples pour créer une image de confiance auprès de vos clients et booster vos chiffres grâce à une e-réputation solide.",
       content: "La communication digitale professionnelle fait la différence dans un monde ultra-connecté. Découvrez pourquoi il est crucial de faire appel à des experts.",
-      image: "/images/customer-experience-creative-collage.jpg",
+      image: collaborationImg,
       author: "Équipe Udigit",
       date: "5 août 2025",
       readTime: "45 min",

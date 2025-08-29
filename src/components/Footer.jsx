@@ -1,15 +1,20 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  MapPin, 
   Mail, 
   Phone, 
-  ChevronUp 
+  MapPin, 
+  Facebook, 
+  Instagram, 
+  Twitter, 
+  Linkedin,
+  ArrowRight,
+  Heart
 } from 'lucide-react'
 import Icon from './Icon'
+
+// Import du logo
+import logoImg from '/images/udi.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -55,7 +60,7 @@ const Footer = () => {
           >
                          <div className="flex items-center space-x-3 mb-6">
                <img 
-                 src="/images/udi.png" 
+                 src={logoImg} 
                  alt="Udigit Logo" 
                  className="w-16 h-16 object-contain scale-150"
                />
@@ -221,7 +226,7 @@ const Footer = () => {
                 className="w-10 h-10 bg-udigit-orange rounded-full flex items-center justify-center hover:bg-udigit-orange/90 transition-colors shadow-lg"
                 title="Remonter en haut"
               >
-                <Icon icon={ChevronUp} size="sm" color="white" />
+                <Icon icon={ArrowRight} size="sm" color="white" />
               </motion.button>
             </div>
           </div>

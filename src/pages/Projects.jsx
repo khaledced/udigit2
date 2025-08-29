@@ -17,6 +17,38 @@ import {
 import Button from '../components/Button'
 import Icon from '../components/Icon'
 
+// Import des images
+import visualImg from '/images/visual.png'
+import f1Img from '/images/f1.jpeg'
+import f2Img from '/images/f2.jpg'
+import f3Img from '/images/f3.png'
+import f4Img from '/images/f4.png'
+import illusImg from '/images/illus.jpg'
+import img55 from '/images/55.png'
+import img4278766 from '/images/4278766.png'
+import asi1Img from '/images/asi1.jpg'
+import mannequinImg from '/images/mannequin.png'
+import img16 from '/images/16.png'
+import img8 from '/images/8.png'
+import img11 from '/images/11.png'
+import img6 from '/images/6.png'
+import img9 from '/images/9.png'
+import melinaImg from '/images/melina.jpg'
+import lagonImg from '/images/lagon.jpg'
+import espaceImg from '/images/espace.jpg'
+import client1Img from '/images/client1.png'
+import client2Img from '/images/client2.png'
+import client3Img from '/images/client3.png'
+import client4Img from '/images/client4.png'
+import client5Img from '/images/client5.png'
+import client6Img from '/images/client6.png'
+import client7Img from '/images/client7.png'
+import client8Img from '/images/client8.png'
+import client9Img from '/images/client9.png'
+import client10Img from '/images/client10.png'
+import client11Img from '/images/client11.png'
+import client12Img from '/images/client12.png'
+
 const Projects = () => {
   const containerRef = useRef(null)
   const [selectedGallery, setSelectedGallery] = useState(null)
@@ -35,39 +67,39 @@ const Projects = () => {
       id: 1,
       title: "Identités Visuelles",
       description: "Création complète d'identités de marque : logos, chartes graphiques, supports de communication et guidelines.",
-      image: "/images/visual.png",
+      image: visualImg,
       category: "Branding",
       gallery: [
-        "/images/f1.jpeg",
-        "/images/f2.jpg",
-        "/images/f3.png",
-        "/images/f4.png",
+        f1Img,
+        f2Img,
+        f3Img,
+        f4Img,
       ]
     },
     {
       id: 2,
       title: "Packaging et Illustrations",
       description: "Design d'emballages créatifs et illustrations personnalisées pour valoriser vos produits.",
-      image: "/images/illus.jpg",
+      image: illusImg,
       category: "Packaging",
              gallery: [
-         "/images/55.png",
-         "/images/4278766.png",
-         "/images/asi1.jpg",
-         "/images/mannequin.png",
+         img55,
+         img4278766,
+         asi1Img,
+         mannequinImg,
        ]
     },
     {
       id: 3,
       title: "Affiches Événementielles",
       description: "Création d'affiches impactantes et supports visuels pour vos événements et campagnes.",
-      image: "/images/16.png",
+      image: img16,
       category: "Print",
       gallery: [
-        "/images/8.png",
-        "/images/11.png",
-        "/images/6.png",
-        "/images/9.png"
+        img8,
+        img11,
+        img6,
+        img9
       ]
     }
   ]
@@ -78,7 +110,7 @@ const Projects = () => {
       id: 1,
       title: "Contenu promotionnel pour un restaurant",
       description: "Série de contenus pour l'ouverture d'un nouveau restaurant.",
-      image: "/images/melina.jpg",
+      image: melinaImg,
       platform: "Instagram",
       youtubeLink: "https://www.youtube.com/shorts/2vtoRiKiCPY" // Lien de test temporaire
     },
@@ -86,7 +118,7 @@ const Projects = () => {
       id: 2,
       title: "Vidéo virale pour un espace détente",
       description: "Contenu vidéo virale pour la promotion d'un espace de détente.",
-      image: "/images/lagon.jpg",
+      image: lagonImg,
       platform: "TikTok",
       youtubeLink: "https://youtube.com/shorts/geLfGMCugsM?si=ivqNMlBSsYryRk0h" // Remplacez par votre lien YouTube
     },
@@ -94,7 +126,7 @@ const Projects = () => {
       id: 3,
       title: "Tournage de vidéos pour un espace piscine-lounche-bar",
       description: "Vidéos professionnelles pour la promotion d'un espace piscine-lounche-bar",
-      image: "/images/espace.jpg",
+      image: espaceImg,
       platform: "Facebook",
       youtubeLink: "https://youtube.com/shorts/9nVjaUPPGgI?si=6w-af02Xu8OAdEWI" // Remplacez par votre lien YouTube
     }
@@ -120,62 +152,62 @@ const Projects = () => {
     {
       id: 1,
       name: "Client 1",
-      logo: "/images/client1.png" // Remplacez par votre logo
+      logo: client1Img // Remplacez par votre logo
     },
     {
       id: 2,
       name: "Client 2", 
-      logo: "/images/client2.png" // Remplacez par votre logo
+      logo: client2Img // Remplacez par votre logo
     },
     {
       id: 3,
       name: "Client 3",
-      logo: "/images/client3.png" // Remplacez par votre logo
+      logo: client3Img // Remplacez par votre logo
     },
     {
       id: 4,
       name: "Client 4",
-      logo: "/images/client4.png" // Remplacez par votre logo
+      logo: client4Img // Remplacez par votre logo
     },
     {
       id: 5,
       name: "Client 5",
-      logo: "/images/client5.png" // Remplacez par votre logo
+      logo: client5Img // Remplacez par votre logo
     },
     {
       id: 6,
       name: "Client 6",
-      logo: "/images/client6.png" // Remplacez par votre logo
+      logo: client6Img // Remplacez par votre logo
     },
     {
       id: 7,
       name: "Client 7",
-      logo: "/images/client7.png" // Remplacez par votre logo
+      logo: client7Img // Remplacez par votre logo
     },
     {
       id: 8,
       name: "Client 8",
-      logo: "/images/client8.png" // Remplacez par votre logo
+      logo: client8Img // Remplacez par votre logo
     },
     {
       id: 9,
       name: "Client 9",
-      logo: "/images/client9.png" // Remplacez par votre logo
+      logo: client9Img // Remplacez par votre logo
     },
     {
       id: 10,
       name: "Client 10",
-      logo: "/images/client10.png" // Remplacez par votre logo
+      logo: client10Img // Remplacez par votre logo
     },
     {
       id: 11,
       name: "Client 11",
-      logo: "/images/client11.png" // Remplacez par votre logo
+      logo: client11Img // Remplacez par votre logo
     },
     {
       id: 12,
       name: "Client 12",
-      logo: "/images/client12.png" // Remplacez par votre logo
+      logo: client12Img // Remplacez par votre logo
     }
   ]
 

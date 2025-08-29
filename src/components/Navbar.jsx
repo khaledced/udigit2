@@ -5,6 +5,9 @@ import { Menu, X, MessageCircle, Home, Briefcase, Users, FolderOpen, FileText } 
 import Button from './Button'
 import Icon from './Icon'
 
+// Import du logo
+import logoImg from '/images/Plan de travail 45.svg'
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -66,8 +69,8 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <img 
-                              src="/images/Plan de travail 45.svg" 
+                        <img 
+              src={logoImg} 
               alt="Udigit Logo" 
               className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto"
             />
